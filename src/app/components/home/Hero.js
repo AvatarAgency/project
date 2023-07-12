@@ -21,7 +21,7 @@ const Hero = (props) => {
   return (
     <Grid
       container
-      minHeight={{ md: '80vh', lg: '60vh' , sm:'80vh'}}
+      minHeight={{ xs:'120vh', md: '80vh', lg: '60vh' , sm:'80vh'}}
       sx={{ backgroundColor: '#242424', }}
       width={'100%'}
       color={'white'}

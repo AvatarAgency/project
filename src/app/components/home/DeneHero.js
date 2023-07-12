@@ -17,12 +17,12 @@ const DeneHero = (prop) => {
   const width = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width < 768 ? '80%' : size.width >= 1440 ? '39%' : size.width >= 992 ? '56%' : size.width >= 768 ? '30%' : size.width >= 1280 ? '46%' : '10%', '100%']
+    [size.width < 768 ? '100%' : size.width >= 1440 ? '42%' : size.width >= 992 ? '66%' : size.width >= 768 ? '55%' : size.width >= 1280 ? '46%' : '10%', '100%']
   );
   const fontSize = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width >= 1440 ? '11rem' : size.width >= 992 ? '9.8rem' : size.width >= 768 ? '6.4rem' : size.width <= 600 ? '8.5rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
+    [size.width >= 1440 ? '11rem' : size.width >= 992 ? '9.8rem' : size.width >= 768 ? '6.4rem' : size.width <= 600 ? '4.5rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
   );
 
   const container = {
@@ -75,7 +75,12 @@ const DeneHero = (prop) => {
         <motion.section ref={targetRef} style={{ width: '100%', height: scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}>
           <motion.div style={{ zIndex: 15, width: width, textAlign: 'center' }}>
             <Grid item sm={12}>
-              <motion.div style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap' }} variants={container} initial='hidden' animate='visible'>
+              <motion.div
+                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', marginLeft: size.width < 768 ? 25 : '' }}
+                variants={container}
+                initial='hidden'
+                animate='visible'
+              >
                 {letters.map((letter, index) => (
                   <motion.span variants={child} key={index} style={{ color: [11, 12, 13, 14, 15, 16, 17, 18].includes(index) ? '#34B197' : 'white' }}>
                     {/*<Typography sx={{ fontSize: { md: '4.1rem', lg: '5.4rem', sm: '3.4rem', xs: '2.9rem', xl:'5.5rem' }, fontWeight: '900', letterSpacing: { xl: '0.5rem', lg: '0.1rem' }, }}>*/}

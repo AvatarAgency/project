@@ -24,3 +24,18 @@ background: linear-gradient(356deg, rgba(85,54,125,1) 0%, rgba(52,177,151,1) 100
   display: flex;
   align-items: center;
 }
+*{
+  font-family: 'Barlow Condensed', sans-serif !important;
+}
+body{
+  background-color: #383737 !important;
+
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+button{
+  text-transform: capitalize !important;
+}

@@ -9,7 +9,7 @@ const Banner = (props) => {
       minHeight={'30rem'}
       justifyContent={'center'}
       alignItems={'center'}
-      sx={{ backgroundColor: '#242424', color: 'white', textAlign: 'center', px: 3 }}
+      sx={{ backgroundColor: '#383737', color: 'white', textAlign: 'center', px: 3 }}
     >
       <Typography variant='h2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lacinia ipsum.</Typography>
     </Box>

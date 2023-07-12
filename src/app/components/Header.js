@@ -15,10 +15,29 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
 import Loogo from '../icons/Logo.svg';
-import { useScroll, useTransform, motion, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
+import Link from 'next/link';
 
 const drawerWidth = 240;
-const navItems = ['Anasayfa', 'İşlerimiz', 'En Son', 'Bize Ulaşın'];
+//const navItems = ['Anasayfa', 'İşlerimiz', 'En Son', 'Bize Ulaşın'];
+const navItems = [
+  {
+    name: 'Anasayfa',
+    link: '/',
+  },
+  {
+    name: 'İşlerimiz',
+    link: '/works',
+  },
+  {
+    name: 'En Son',
+    link: '/latest',
+  },
+  {
+    name: 'Bize Ulaşın',
+    link: '/contact',
+  },
+];
 
 const Header = (props) => {
   const { window } = props;
@@ -37,16 +56,18 @@ const Header = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ my: 2 }}>
-        MUI
+      <Typography variant='h6' sx={{ mt:2, color: 'white' }}>
+        <Image width={150} src={Loogo} alt='logo' />
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem key={item.name} disablePadding>
+            <Link style={{ textDecoration: 'none', color: 'white' }} href={item.link}>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -59,17 +80,19 @@ const Header = (props) => {
     <Box sx={{ display: 'flex', position: 'absolute' }}>
       <AppBar component='nav' sx={{ backgroundColor: deger > 0 ? '#242424' : 'transparent', px: { lg: 5, md: 3, xl: 5 }, transition: '0.8s', boxShadow: 'none' }}>
         <Toolbar sx={{ justifyContent: 'space-between', height: '5rem' }}>
-          <IconButton color='inherit' aria-label='open drawer' edge='start' onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: 'none' } }}>
+          <IconButton color='inherit' aria-label='open drawer' edge='start' onClick={handleDrawerToggle} sx={{ mr: 2, display: mobileOpen ? 'none' : { sm: 'none' } }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Image src={Loogo} alt='logo' />
-          </Typography>
+          <Link href={'/'}>
+            <Typography variant='h6' component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Image src={Loogo} alt='logo' />
+            </Typography>
+          </Link>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', mr: { md: 2, lg: 5 } }}>
-                {item}
-              </Button>
+              <Link key={item.name} style={{ textDecoration: 'none' }} href={item.link}>
+                <Button sx={{ color: '#fff', mr: { md: 2, lg: 5 }, fontSize: '1em' }}>{item.name}</Button>
+              </Link>
             ))}
           </Box>
           <Typography fontStyle={'italic'}>Hadi Başlayalım</Typography>
@@ -86,7 +109,7 @@ const Header = (props) => {
           }}
           sx={{
             'display': { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'transparent' },
           }}
         >
           {drawer}

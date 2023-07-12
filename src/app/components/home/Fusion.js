@@ -70,11 +70,11 @@ const M1 = forwardRef(({ texture, children, ...props }, ref) => {
 const Fusion = (props) => {
 
   return (
-    <Box  sx={{ backgroundColor: '#242424', width:'100%', height:'70vh'}}>
+    <Box id='style-2' sx={{ backgroundColor: '#383737', width:'100%', height: { xs:'35vh', sm:'40vh', md:'60vh', lg:'80vh'}, mb:10}}>
       <Typography color={'white'} textAlign={'center'} sx={{ fontSize: { xs: '2rem', lg: '3.5rem' } }} fontWeight={900}>HUZURLARINIZDA</Typography>
 
       <Canvas shadows dpr={[1, 2]} camera={{ position: [0, -3.2, 40], fov: 12 }}>
-        <ScrollControls pages={1}>
+        <ScrollControls pages={2}>
         <Composition />
         </ScrollControls>
       </Canvas>
@@ -138,6 +138,7 @@ const Fusion = (props) => {
           </Box>
         </Box>
       </Container>*/}
+      
 
     </Box>
   )
