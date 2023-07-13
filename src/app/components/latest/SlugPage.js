@@ -1,9 +1,9 @@
 'use client';
-import { Box, Divider, Grid, Typography } from '@mui/material';
+import { Box, Divider, Grid } from '@mui/material';
 import React from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import Footer from '../home/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SlugPage = ({ post, others }) => {
   const { scrollYProgress } = useScroll();
@@ -12,37 +12,45 @@ const SlugPage = ({ post, others }) => {
     <>
       <Box width={'100%'} minHeight={'20vh'} pt={10} px={8}>
         <Box textAlign={{ xs: 'center', md: 'unset' }} display={'block'} mb={10}>
-          <Typography fontWeight='200' sx={{ fontSize: { xl: '7em', xs: '1.7em', sm: '2em', md: '2.5em', lg: '3em' } }} color={'white'}>
+          <Box  fontWeight='200' sx={{ fontSize: { xl: '7em', xs: '2.7em', sm: '3em', md: '4.5em', lg: '5em' } }} color={'white'}>
             TITLE
-          </Typography>
-          <Typography sx={{ fontSize: { xl: '10em', xs: '2.7em', sm: '3.5em', md: '4em', lg: '6em' }, lineHeight: '0.5em' }} color={'white'}>
+          </Box>
+          <Box fontWeight={800} sx={{ fontSize: { xl: '10em', xs: '3.7em', sm: '4.5em', md: '7em', lg: '8em' }, lineHeight: '0.5em' }} color={'white'}>
             {post.fields.blogTitle}
-          </Typography>
+          </Box>
         </Box>
         <Box display={{ xs: 'block', md: 'flex' }} textAlign={{ xs: 'center', md: 'unset' }} width={'100%'} flexDirection={'row'}>
           <Box display={'block'} mr={{ xs: 0, md: 10 }}>
-            <Typography color={'grey'}>Yazar</Typography>
-            <Typography color={'white'} fontSize={'2em'}>
+            <Box  fontWeight={300} color={'grey'}>
+              Yazar
+            </Box>
+            <Box  fontWeight={700} color={'white'} fontSize={'2em'}>
               {post.fields.blogAuthor}
-            </Typography>
+            </Box>
           </Box>
           <Box display={'block'} mr={{ xs: 0, md: 10 }}>
-            <Typography color={'grey'}>Tarih</Typography>
-            <Typography color={'white'} fontSize={'2em'}>
+            <Box  fontWeight={300} color={'grey'}>
+              Tarih
+            </Box>
+            <Box  fontWeight={700} color={'white'} fontSize={'2em'}>
               {new Date(post.sys.createdAt).toLocaleDateString()}
-            </Typography>
+            </Box>
           </Box>
           <Box display={'block'}>
-            <Typography color={'grey'}>Okuma Süresi</Typography>
-            <Typography color={'white'} fontSize={'2em'}>
+            <Box  fontWeight={300} color={'grey'}>
+              Okuma Süresi
+            </Box>
+            <Box fontWeight={700} color={'white'} fontSize={'2em'}>
               {post.fields.readingTime}
-            </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
       <Divider sx={{ mt: 4, borderTop: '3px solid #707070' }} />
       <Box width={'100%'} minHeight={'50vh'} p={8}>
-        <Typography color={'white'}>{post.fields.postContent}</Typography>
+        <Box  fontWeight={400} color={'white'}>
+          {post.fields.postContent}
+        </Box>
       </Box>
       <Box mt={5} display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
@@ -52,24 +60,33 @@ const SlugPage = ({ post, others }) => {
       </Box>
       <Box width={'100%'} minHeight={'20vh'} pt={10} px={8}>
         <Box textAlign={{ xs: 'center', md: 'unset' }} display={'block'} sx={{ mb: 10 }}>
-          <Typography fontWeight='200' sx={{ fontSize: { xl: '7em', xs: '1.7em', sm: '2em', md: '2.5em', lg: '3em' } }} color={'white'}>
+          <Box fontWeight='200' sx={{ fontSize: { xl: '7em', xs: '1.7em', sm: '2em', md: '2.5em', lg: '3em' } }} color={'white'}>
             DİĞER
-          </Typography>
-          <Typography fontWeight='200' sx={{ fontSize: { xl: '10em', xs: '2.7em', sm: '3.5em', md: '4em', lg: '6em' }, lineHeight: '0.5em' }} color={'white'}>
+          </Box>
+          <Box fontWeight='800' sx={{ fontSize: { xl: '10em', xs: '2.7em', sm: '3.5em', md: '4em', lg: '6em' }, lineHeight: '0.5em' }} color={'white'}>
             YAZILAR
-          </Typography>
+          </Box>
         </Box>
         <Grid container spacing={3}>
           {others.map((data, key) => (
             <Grid key={key} item xs={12} md={4} mb={{ xs: 5 }}>
               <Link style={{ textDecoration: 'none' }} href={`/latest/${data.fields.slug}`}>
-                <Box component='img' width={'100%'} height={'90%'} src={data.fields.blogImage.fields.file.url}></Box>
-                <Typography variant='body2' sx={{ color: 'grey' }}>
+                <Box width={'100%'} height={'90%'}>
+                  <Image
+                    src={'https:' + data.fields.blogImage.fields.file.url}
+                    width={0}
+                    height={0}
+                    alt={data.fields.slug}
+                    sizes='100vw'
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </Box>
+                <Box className='extra' fontWeight={300} sx={{ color: 'grey' }}>
                   {data.fields.blogAuthor}
-                </Typography>
-                <Typography variant='h4' sx={{ fontWeight: '900', color: 'white' }}>
+                </Box>
+                <Box className='extra' fontWeight={700}  sx={{ fontSize:'2em', color: 'white' }}>
                   {data.fields.blogTitle}
-                </Typography>
+                </Box>
               </Link>
             </Grid>
           ))}

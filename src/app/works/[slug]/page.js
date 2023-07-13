@@ -9,9 +9,10 @@ export const metadata = {
 
 const Slug = async ({ params: { slug } }) => {
   const post = await client.getEntries({ 'content_type': 'works', 'fields.slug': slug });
+  const others = await client.getEntries({ content_type: 'works', limit: 3 });
   return (
     <div style={{ backgroundColor: '#383737' }}>
-      <SlugPage post={post.items[0]} />
+      <SlugPage post={post.items[0]} others={others.items} />
     </div>
   );
 };

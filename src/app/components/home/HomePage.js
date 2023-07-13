@@ -16,7 +16,7 @@ const HomePage = ({ data, works }) => {
   return (
     <div style={{ overflow: 'hidden', backgroundColor: '#383737' }}>
       <DeneHero />
-      <Hero />
+      <Hero data={data[0].fields.biziIzle} />
       <Box display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
           Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler -
@@ -24,7 +24,7 @@ const HomePage = ({ data, works }) => {
         </motion.h6>
       </Box>
       <LastWorks works={works} />
-      <Banner />
+      <Banner data={data[0]?.fields?.sonIsler} />
       <Box display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
           Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz -

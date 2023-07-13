@@ -56,7 +56,7 @@ const Header = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ mt:2, color: 'white' }}>
+      <Typography variant='h6' sx={{ mt: 2, color: 'white' }}>
         <Image width={150} src={Loogo} alt='logo' />
       </Typography>
       <Divider />
@@ -91,11 +91,15 @@ const Header = (props) => {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Link key={item.name} style={{ textDecoration: 'none' }} href={item.link}>
-                <Button sx={{ color: '#fff', mr: { md: 2, lg: 5 }, fontSize: '1em' }}>{item.name}</Button>
+                <Button className='cadiz' sx={{ color: '#fff', mr: { md: 2, lg: 5 }, fontSize: '1em', fontWeight: 600 }}>
+                  {item.name}
+                </Button>
               </Link>
             ))}
           </Box>
-          <Typography fontStyle={'italic'}>Hadi Başlayalım</Typography>
+          <Typography className='cadiz' fontWeight={900} fontStyle={'italic'}>
+            Hadi Başlayalım
+          </Typography>
         </Toolbar>
       </AppBar>
       <Box component='nav'>

@@ -1,5 +1,5 @@
 'use client';
-import { Grid, Divider, Container, Box, Typography } from '@mui/material';
+import { Grid, Divider, Container, Box } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import useWindowSize from '../useWindowSize';
@@ -17,12 +17,12 @@ const DeneHero = (prop) => {
   const width = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width < 768 ? '100%' : size.width >= 1440 ? '42%' : size.width >= 992 ? '66%' : size.width >= 768 ? '55%' : size.width >= 1280 ? '46%' : '10%', '100%']
+    [size.width < 768 ? '100%' : size.width >= 1440 ? '42%' : size.width >= 992 ? '76%' : size.width >= 768 ? '65%' : size.width >= 1280 ? '46%' : '10%', '100%']
   );
   const fontSize = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width >= 1440 ? '11rem' : size.width >= 992 ? '9.8rem' : size.width >= 768 ? '6.4rem' : size.width <= 600 ? '4.5rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
+    [size.width >= 1440 ? '16rem' : size.width >= 992 ? '15rem' : size.width >= 768 ? '10rem' : size.width <= 600 ? '6.5rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
   );
 
   const container = {
@@ -83,8 +83,10 @@ const DeneHero = (prop) => {
               >
                 {letters.map((letter, index) => (
                   <motion.span variants={child} key={index} style={{ color: [11, 12, 13, 14, 15, 16, 17, 18].includes(index) ? '#34B197' : 'white' }}>
-                    {/*<Typography sx={{ fontSize: { md: '4.1rem', lg: '5.4rem', sm: '3.4rem', xs: '2.9rem', xl:'5.5rem' }, fontWeight: '900', letterSpacing: { xl: '0.5rem', lg: '0.1rem' }, }}>*/}
-                    <motion.div style={{ fontWeight: '900' }}>{letter === ' ' ? '\u00A0' : letter}</motion.div>
+                    {/*<Box sx={{ fontSize: { md: '4.1rem', lg: '5.4rem', sm: '3.4rem', xs: '2.9rem', xl:'5.5rem' }, fontWeight: '900', letterSpacing: { xl: '0.5rem', lg: '0.1rem' }, }}>*/}
+                    <motion.div className='extra' style={{ fontWeight: '900', letterSpacing: '0.5rem' }}>
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </motion.div>
                   </motion.span>
                 ))}
               </motion.div>

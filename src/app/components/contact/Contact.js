@@ -1,10 +1,9 @@
 'use client';
-import { Alert, Box, Button, Divider, Snackbar, TextField, Typography, styled } from '@mui/material';
+import { Alert, Box, Button, Divider, Snackbar, TextField, styled } from '@mui/material';
 import React, { useRef } from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SendIcon from '@mui/icons-material/Send';
-import Footer from '../home/Footer';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
@@ -20,6 +19,8 @@ const StyledInput = styled(TextField)`
   }
   & .MuiInputLabel-root {
     color: white;
+    font-family: 'Barlow Condensed';
+    font-weight: 300;
   }
   & .MuiInputLabel-root.Mui-focused {
     color: white;
@@ -68,16 +69,20 @@ const ContactPage = () => {
   return (
     <Box>
       <Box width={'100%'} pt={10} px={8}>
-        <Typography variant='h1' color={'white'}>
-          BİZE <br></br>
-          <span style={{ fontSize: '2em' }}>ULAŞIN</span>
-        </Typography>
+        <Box textAlign={{ xs: 'center', md: 'unset' }} display={'block'} mb={10}>
+          <Box className='extra' fontWeight='200' sx={{ fontSize: { xl: '11em', xs: '4em', sm: '6em', md: '7em', lg: '8em' } }} color={'white'}>
+            BİZE
+          </Box>
+          <Box className='extra' sx={{ fontSize: { xl: '16em', xs: '6em', sm: '10.5em', md: '9.7em', lg: '13em' }, lineHeight: '0.5em' }} color={'white'}>
+            ULAŞIN
+          </Box>
+        </Box>
       </Box>
       <Divider sx={{ mt: 4, borderTop: '3px solid #707070' }} />
       <Box width={'50%'} minHeight={'20rem'} px={8} mt={5}>
         <form ref={form} onSubmit={formik.handleSubmit}>
           <StyledInput
-            inputProps={{ style: { color: 'white', fontWeight: 900, fontSize: '1.2em' } }}
+            inputProps={{ style: { color: 'white', fontWeight: 700, fontSize: '1.2em', fontFamily: 'Barlow Condensed' } }}
             label='Adres'
             multiline
             value={formik.values.adres}
@@ -90,7 +95,7 @@ const ContactPage = () => {
             variant='standard'
           />
           <StyledInput
-            inputProps={{ style: { color: 'white', fontWeight: 900, fontSize: '1.2em' } }}
+            inputProps={{ style: { color: 'white', fontWeight: 700, fontSize: '1.2em', fontFamily: 'Barlow Condensed' } }}
             label='E-mail'
             multiline
             value={formik.values.email}
@@ -102,11 +107,12 @@ const ContactPage = () => {
             variant='standard'
           />
           <StyledInput
-            inputProps={{ style: { color: 'white', fontWeight: 900, fontSize: '1.2em' }, inputMode: 'numeric', pattern: '[0-9]*' }}
+            inputProps={{ style: { color: 'white', fontWeight: 700, fontSize: '1.2em', fontFamily: 'Barlow Condensed' } }}
             label='Telefon'
             error={formik.touched.telefon && Boolean(formik.errors.telefon)}
             helperText={formik.touched.telefon && formik.errors.telefon}
             multiline
+            placeholder='546..'
             name='telefon'
             value={formik.values.telefon}
             onChange={formik.handleChange}
