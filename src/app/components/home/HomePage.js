@@ -8,6 +8,7 @@ import Banner from './Banner';
 import Fusion from './Fusion';
 import Footer from './Footer';
 import { useScroll, useTransform, motion } from 'framer-motion';
+import Image from 'next/image';
 
 const HomePage = ({ data, works }) => {
   const { scrollYProgress } = useScroll();
@@ -36,7 +37,18 @@ const HomePage = ({ data, works }) => {
         <Grid container spacing={2}>
           {data[0].fields.huzurlarinizda.map((image, key) => (
             <Grid key={key} minHeight={'70vh'} item sm={12} md={4}>
-              <Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />
+              {/*<Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />*/}
+              <Box width={'100%'} height={'100%'}>
+                <Image
+                  src={'https:' + image.fields.file.url}
+                  quality={100}
+                  width={0}
+                  sizes='100vw'
+                  height={0}
+                  alt={image.fields.title}
+                  style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                />
+              </Box>
             </Grid>
           ))}
         </Grid>

@@ -22,7 +22,7 @@ const LastWorks = ({ works }) => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </Box>
-            <Box sx={{ position: 'absolute', bottom: '0rem', backgroundColor: '#00000066', height: '10vh', width: '100%' }}>
+            <Box className='grad' sx={{ position: 'absolute', bottom: '0rem',   height: '10vh', width: '100%' }}>
               <Box className='extra' sx={{ fontWeight: '900', zIndex: 999, ml: '1.5rem', fontSize: '2em' }}>
                 {work.fields.sirketAd}
               </Box>
