@@ -1,3 +1,4 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito&display=swap');*/
 .back{
   background: rgb(85,54,125);
 background: linear-gradient(356deg, rgba(85,54,125,1) 0%, rgba(52,177,151,1) 100%);
@@ -25,6 +26,9 @@ background: linear-gradient(356deg, rgba(85,54,125,1) 0%, rgba(52,177,151,1) 100
   display: flex;
   align-items: center;
 }
+/*.extra{
+  font-family: 'Barlow Condensed', sans-serif !important;
+ }*/
 body{
   background-color: #383737 !important;
 }
@@ -32,7 +36,7 @@ body{
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
-@font-face {
+/*@font-face {
   font-family: 'Cadiz';
   src: local('fonts/Cadiz SemiBold'), local('fonts/Cadiz-SemiBold'),
       url('./font/semibold/Cadiz-SemiBold.woff2') format('woff2'),
@@ -49,7 +53,7 @@ body{
       url('./font/black/Cadiz-BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-style: italic;
-}
+}*/
 
 .cadiz{
   font-family: 'Cadiz';
