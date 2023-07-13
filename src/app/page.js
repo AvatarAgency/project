@@ -1,6 +1,8 @@
 import HomePage from './components/home/HomePage';
 import { client } from './contentful/client';
 
+export const revalidate = 30;
+
 export const metadata = {
   title: 'Avatar Agency',
   description: 'Avatar agency digital media',

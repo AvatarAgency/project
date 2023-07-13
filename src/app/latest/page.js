@@ -2,6 +2,8 @@ import React from 'react';
 import LatestPage from '../components/latest/LatestPage';
 import { client } from '../contentful/client';
 
+export const revalidate = 30;
+
 export const metadata = {
   title: 'Avatar Agency',
   description: 'Avatar agency digital media',

@@ -2,6 +2,8 @@ import React from 'react';
 import WorksPage from '../components/works/WorksPage';
 import { client } from '../contentful/client';
 
+export const revalidate = 30;
+
 export const metadata = {
   title: 'Avatar Agency',
   description: 'Avatar agency digital media',
