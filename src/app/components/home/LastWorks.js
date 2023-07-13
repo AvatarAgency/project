@@ -8,7 +8,7 @@ const LastWorks = ({ works }) => {
   return (
     <Grid container spacing={0.5}>
       {works?.map((work, key) => (
-        <Grid minHeight={'46rem'} key={key} item xs={12} lg={4} position={'relative'}>
+        <Grid minHeight={'80vh'} key={key} item xs={12} lg={4} position={'relative'}>
           <Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>
             <Box width={'100%'} height={'100%'}>
               <Image
