@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Cadiz';
-    src: local('Cadiz SemiBold'), local('Cadiz-SemiBold'),
-        url('Cadiz-SemiBold.woff2') format('woff2'),
-        url('Cadiz-SemiBold.woff') format('woff'),
-        url('Cadiz-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
