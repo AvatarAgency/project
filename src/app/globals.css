@@ -44,18 +44,18 @@ body{
 @font-face {
   font-family: 'Cadiz';
   src: local('fonts/Cadiz SemiBold'), local('fonts/Cadiz-SemiBold'),
-      url('./font/semibold/Cadiz-SemiBold.woff2') format('woff2'),
-      url('./font/semibold/Cadiz-SemiBold.woff') format('woff'),
-      url('./font/semibold/Cadiz-SemiBold.ttf') format('truetype');
+      url('../font/semibold/Cadiz-SemiBold.woff2') format('woff2'),
+      url('../font/semibold/Cadiz-SemiBold.woff') format('woff'),
+      url('../font/semibold/Cadiz-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Cadiz';
   src: local('Cadiz  Black Italic'), local('Cadiz--Black-Italic'),
-      url('./font/black/Cadiz-BlackItalic.woff2') format('woff2'),
-      url('./font/black/Cadiz-BlackItalic.woff') format('woff'),
-      url('./font/black/Cadiz-BlackItalic.ttf') format('truetype');
+      url('../font/black/Cadiz-BlackItalic.woff2') format('woff2'),
+      url('../font/black/Cadiz-BlackItalic.woff') format('woff'),
+      url('../font/black/Cadiz-BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-style: italic;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import LatestPage from '../components/latest/LatestPage';
-import { client } from '../contentful/client';
+ import LatestPage from '../../components/latest/LatestPage';
+import { client } from '../../contentful/client';
 
 export const revalidate = 30;
 

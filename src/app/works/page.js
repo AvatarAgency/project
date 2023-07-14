@@ -1,6 +1,6 @@
 import React from 'react';
-import WorksPage from '../components/works/WorksPage';
-import { client } from '../contentful/client';
+ import WorksPage from '../../components/works/WorksPage';
+import { client } from '../../contentful/client';
 
 export const revalidate = 30;
 

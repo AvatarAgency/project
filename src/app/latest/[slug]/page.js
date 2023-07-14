@@ -1,6 +1,6 @@
 import React from 'react';
-import SlugPage from '../../components/latest/SlugPage';
-import { client } from '../../contentful/client';
+ import SlugPage from '../../../components/latest/SlugPage';
+import { client } from '../../../contentful/client';
 
 export const metadata = {
   title: 'Avatar Agency',

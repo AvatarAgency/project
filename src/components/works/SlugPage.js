@@ -5,7 +5,6 @@ import LastWorks from '../home/LastWorks';
 import Image from 'next/image';
 
 const SlugPage = ({ post, others }) => {
-  console.log(post);
   return (
     <>
       <Box width={'100%'} minHeight={{ xs: '25vh', md: '40vh', lg: '50vh' }} pt={10} px={8}>
