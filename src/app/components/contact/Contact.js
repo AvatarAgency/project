@@ -79,7 +79,7 @@ const ContactPage = () => {
         </Box>
       </Box>
       <Divider sx={{ mt: 4, borderTop: '3px solid #707070' }} />
-      <Box width={'50%'} minHeight={'20rem'} px={8} mt={5}>
+      <Box width={{xs:'100%',md:'50%'}} minHeight={'20rem'} px={8} mt={5}>
         <form ref={form} onSubmit={formik.handleSubmit}>
           <StyledInput
             inputProps={{ style: { color: 'white', fontWeight: 700, fontSize: '1.2em', fontFamily: 'Barlow Condensed' } }}
@@ -128,8 +128,8 @@ const ContactPage = () => {
             Mesajınız iletildi!
           </Alert>
         </Snackbar>
-        <Box display={'flex'} flexDirection={'row'}>
-          <Button sx={{ mt: 5 }} variant='contained' color='secondary' startIcon={<InstagramIcon />}>
+        <Box width={'100%'} display={'flex'} flexDirection={'row'}>
+          <Button sx={{ mt: 5 }} variant='contained' color='secondary' size='lg' startIcon={<InstagramIcon />}>
             instagram
           </Button>
           <Button sx={{ mt: 5, ml: 2 }} variant='contained' color='primary' startIcon={<LinkedInIcon />}>
