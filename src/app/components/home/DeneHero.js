@@ -1,5 +1,5 @@
 'use client';
-import { Grid, Divider, Container, Box } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import useWindowSize from '../useWindowSize';

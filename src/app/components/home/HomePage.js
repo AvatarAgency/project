@@ -5,7 +5,7 @@ import Hero from './Hero';
 import { Box, Grid } from '@mui/material';
 import LastWorks from './LastWorks';
 import Banner from './Banner';
-//import Fusion from './Fusion';
+import Fusion from './Fusion';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -31,7 +31,7 @@ const HomePage = ({ data, works }) => {
           Hizmetlerimiz
         </motion.h6>
       </Box>
-      {/*<Fusion />*/}
+      <Fusion />
       <Grid container spacing={2}>
         <Grid container spacing={2}>
           {data[0].fields.huzurlarinizda.map((image, key) => (
