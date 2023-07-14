@@ -28,7 +28,7 @@ const SlugPage = ({ post, others }) => {
         </Box>
       </Box>
       <Box display={'flex'} justifyContent={'center'} width={'100%'} minHeight={'50vh'} p={4}>
-        <Box width={'100%'} minHeight={'70vh'}>
+        <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
           <Image
             src={'https:' + post.fields.projeResimler[0].fields.file.url}
             width={0}
@@ -43,7 +43,7 @@ const SlugPage = ({ post, others }) => {
         <LastWorks works={others} />
       </Box>
       <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} width={'100%'} minHeight={'50vh'} p={4}>
-        <Box width={'100%'} minHeight={'70vh'}>
+        <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
           <Image
             src={'https:' + post.fields.projeResimler[1].fields.file.url}
             width={0}
@@ -54,7 +54,7 @@ const SlugPage = ({ post, others }) => {
           />
         </Box>
         {post.fields.projeResimler[2].fields.file.url && (
-          <Box width={'100%'} minHeight={'70vh'}>
+          <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
             <Image
               src={'https:' + post.fields.projeResimler[2].fields.file.url}
               width={0}
@@ -66,7 +66,6 @@ const SlugPage = ({ post, others }) => {
           </Box>
         )}
       </Box>
-      {/*<Footer />*/}
     </>
   );
 };

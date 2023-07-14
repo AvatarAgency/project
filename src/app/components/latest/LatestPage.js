@@ -1,13 +1,14 @@
 'use client';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Skeleton } from '@mui/material';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const LatestPage = ({ data }) => {
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
+  const [loading, setLoading] = useState(true);
 
   return (
     <div>
@@ -23,22 +24,25 @@ const LatestPage = ({ data }) => {
         <Grid container spacing={5}>
           {data.map((post, key) => {
             return (
-              <Grid key={key} item md={4} sm={6} xs={12}>
+              <Grid key={key} item md={4} sm={6} xs={12} mb={{ xs: 7 }}>
                 <Link style={{ textDecoration: 'none' }} href={`/latest/${post.fields.slug}`}>
                   <Box width={'100%'} height={'90%'}>
+                    {loading && <Skeleton variant='rectangular' sx={{ width: '100%', height: '15rem' }} />}
                     <Image
                       src={'https:' + post.fields.blogImage.fields.file.url}
                       alt={post.fields.slug}
                       width={0}
                       height={0}
                       sizes='100vw'
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onLoadingComplete={() => setLoading(false)}
+                      priority
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: loading ? 'none' : '' }}
                     />
                   </Box>
-                  <Box className='extra' fontWeight={300} sx={{ color: 'grey'    }}>
+                  <Box className='extra' fontWeight={300} sx={{ color: 'grey' }}>
                     {post.fields.blogAuthor}
                   </Box>
-                  <Box className='extra' sx={{ fontWeight: '700', color: 'white' , fontSize:'2.5em'}}>
+                  <Box className='extra' sx={{ fontWeight: '700', color: 'white', fontSize: '2.5em' }}>
                     {post.fields.blogTitle}
                   </Box>
                 </Link>

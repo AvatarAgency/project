@@ -22,7 +22,7 @@ const DeneHero = (prop) => {
   const fontSize = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width >= 1440 ? '16rem' : size.width >= 992 ? '15rem' : size.width >= 768 ? '10rem' : size.width <= 600 ? '6.5rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
+    [size.width >= 1440 ? '16rem' : size.width >= 992 ? '15rem' : size.width >= 768 ? '10rem' : size.width <= 600 ? '5.3rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
   );
 
   const container = {

@@ -36,7 +36,7 @@ const HomePage = ({ data, works }) => {
       <Grid container spacing={2}>
         <Grid container spacing={2}>
           {data[0].fields.huzurlarinizda.map((image, key) => (
-            <Grid key={key} minHeight={'70vh'} item sm={12} md={4}>
+            <Grid key={key} minHeight={'70vh'} item xs={12} md={4}>
               {/*<Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />*/}
               <Box width={'100%'} height={'100%'}>
                 <Image

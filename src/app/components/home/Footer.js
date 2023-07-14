@@ -19,7 +19,15 @@ const Footer = () => {
           <Box display={'flex'} flexDirection={'row'} width={'100%'} mt={3} justifyContent={'center'}>
             <Button
               size='large'
-              sx={{ width: { xs: '50%', md: '50%', lg: '40%' }, borderRadius: '2rem', mr: 1, backgroundColor: 'black', border: '1px solid grey', height: '4rem' }}
+              sx={{
+                'width': { xs: '50%', md: '50%', lg: '40%' },
+                'borderRadius': '2rem',
+                'mr': 1,
+                'backgroundColor': 'black',
+                'border': '1px solid grey',
+                'height': '4rem',
+                ':hover': { backgroundColor: '#242424', color: 'white' },
+              }}
               variant='contained'
             >
               {' '}
@@ -30,7 +38,18 @@ const Footer = () => {
                 Bize Ulaşın
               </Link>
             </Button>
-            <Button size='large' sx={{ width: { xs: '50%', md: '20%' }, borderRadius: '2rem', backgroundColor: 'white', color: 'black', fontSize: '1.2em' }} variant='contained'>
+            <Button
+              size='large'
+              sx={{
+                'width': { xs: '50%', md: '20%' },
+                'borderRadius': '2rem',
+                'backgroundColor': 'white',
+                'color': 'black',
+                'fontSize': '1.2em',
+                ':hover': { backgroundColor: 'white' },
+              }}
+              variant='contained'
+            >
               <Link style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex', textDecoration: 'none' }} href={'/contact'}>
                 👋
               </Link>

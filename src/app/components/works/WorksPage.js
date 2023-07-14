@@ -24,9 +24,9 @@ const WorksPage = ({ works }) => {
       >
         İŞLERİMİZ
       </Box>
-      <Grid container spacing={5} px={10}>
+      <Grid container spacing={5} px={10} mt={2} mb={10}>
         {works.map((work, key) => (
-          <Grid key={key} item md={6} xs={12}>
+          <Grid key={key} mb={{xs:5,md:0}} item md={6} xs={12}>
             <Link href={'/works/' + work.fields.slug} style={{ textDecoration: 'none' }}>
               <Box width={'100%'} height={'90%'}>
                 <Image
