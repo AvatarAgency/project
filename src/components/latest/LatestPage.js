@@ -31,8 +31,8 @@ const LatestPage = ({ data }) => {
                     <Image
                       src={'https:' + post.fields.blogImage.fields.file.url}
                       alt={post.fields.slug}
-                      width={0}
-                      height={0}
+                      width={30}
+                      height={30}
                       sizes='100vw'
                       onLoadingComplete={() => setLoading(false)}
                       priority

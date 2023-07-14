@@ -13,10 +13,9 @@ const LastWorks = ({ works }) => {
             <Box width={'100%'} height={'100%'}>
               <Image
                 src={'https:' + work.fields.projeResimler[0].fields.file.url}
-                width={0}
-                height={0}
+                width={30}
+                height={30}
                 priority
-                quality={70}
                 alt={work.fields.slug}
                 sizes='100vw'
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
