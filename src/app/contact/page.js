@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactPage from '../components/contact/Contact';
+import ContactPage from '../../components/contact/Contact';
 
 export const metadata = {
   title: 'Avatar Agency',
