@@ -40,9 +40,10 @@ const HomePage = ({ data, works }) => {
               <Box width={'100%'} height={'100%'}>
                 <Image
                   src={'https:' + image.fields.file.url}
-                  width={30}
+                  quality={100}
+                  width={0}
                   sizes='100vw'
-                  height={30}
+                  height={0}
                   alt={image.fields.title}
                   style={{ height: '100%', width: '100%', objectFit: 'cover' }}
                 />

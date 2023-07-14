@@ -31,8 +31,8 @@ const SlugPage = ({ post, others }) => {
         <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
           <Image
             src={'https:' + post.fields.projeResimler[0].fields.file.url}
-            width={30}
-            height={30}
+            width={0}
+            height={0}
             sizes='100vw'
             alt={post.fields.projeResimler[0].fields.title || post.fields.projeResimler[0].fields.description}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -46,8 +46,8 @@ const SlugPage = ({ post, others }) => {
         <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
           <Image
             src={'https:' + post.fields.projeResimler[1].fields.file.url}
-            width={30}
-            height={30}
+            width={0}
+            height={0}
             sizes='100vw'
             alt={post.fields.projeResimler[1].fields.title || post.fields.projeResimler[1].fields.description}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -57,9 +57,9 @@ const SlugPage = ({ post, others }) => {
           <Box width={'100%'} minHeight={{ xs: '20vh', md: '50vh' }}>
             <Image
               src={'https:' + post.fields.projeResimler[2].fields.file.url}
-              width={30}
+              width={0}
               alt={post.fields.projeResimler[2].fields.title || post.fields.projeResimler[2].fields.description}
-              height={30}
+              height={0}
               sizes='100vw'
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />

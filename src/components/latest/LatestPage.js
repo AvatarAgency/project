@@ -31,11 +31,10 @@ const LatestPage = ({ data }) => {
                     <Image
                       src={'https:' + post.fields.blogImage.fields.file.url}
                       alt={post.fields.slug}
-                      width={30}
-                      height={30}
+                      width={0}
+                      height={0}
                       sizes='100vw'
                       onLoadingComplete={() => setLoading(false)}
-                      priority
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: loading ? 'none' : '' }}
                     />
                   </Box>

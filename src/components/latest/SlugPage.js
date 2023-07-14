@@ -74,8 +74,8 @@ const SlugPage = ({ post, others }) => {
                 <Box width={'100%'} height={'90%'}>
                   <Image
                     src={'https:' + data.fields.blogImage.fields.file.url}
-                    width={30}
-                    height={30}
+                    width={0}
+                    height={0}
                     alt={data.fields.slug}
                     sizes='100vw'
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
