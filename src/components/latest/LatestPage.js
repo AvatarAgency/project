@@ -8,7 +8,6 @@ import Image from 'next/image';
 const LatestPage = ({ data }) => {
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
-  const [loading, setLoading] = useState(true);
 
   return (
     <div>
@@ -27,14 +26,12 @@ const LatestPage = ({ data }) => {
               <Grid key={key} item md={4} sm={6} xs={12} mb={{ xs: 7 }}>
                 <Link style={{ textDecoration: 'none' }} href={`/latest/${post.fields.slug}`}>
                   <Box width={'100%'} height={'90%'}>
-                    {loading && <Skeleton variant='rectangular' sx={{ width: '100%', height: '15rem' }} />}
                     <Image
                       src={'https:' + post.fields.blogImage.fields.file.url}
                       alt={post.fields.slug}
                       width={0}
                       height={0}
                       sizes='100vw'
-                      onLoadingComplete={() => setLoading(false)}
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: loading ? 'none' : '' }}
                     />
                   </Box>
