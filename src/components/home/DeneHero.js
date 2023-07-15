@@ -57,13 +57,13 @@ const DeneHero = (prop) => {
   };
   const letters = Array.from('MARKANIZIN AVATARI BİZ OLALIM');
 
-  useEffect(() => {
-    const getFont = () => {
-      size.width >= 992 ? '15rem' : size.width >= 768 ? '7rem' : size.width >= 600 ? '7rem' : size.width < 600 ? '7rem' : '7rem';
-    };
+  //useEffect(() => {
+  //  const getFont = () => {
+  //    size.width >= 992 ? '15rem' : size.width >= 768 ? '7rem' : size.width >= 600 ? '7rem' : size.width < 600 ? '7rem' : '7rem';
+  //  };
 
-    getFont();
-  }, [size.width]);
+  //  getFont();
+  //}, [size.width]);
 
   return (
     <Box sx={{ width: '100%', height: '100%' }} position={'relative'}>
@@ -72,8 +72,8 @@ const DeneHero = (prop) => {
         sx={{ position: 'absolute', height: '60%', width: '100%', opacity: '0.5', borderBottomLeftRadius: '50%', borderBottomRightRadius: '50%', filter: 'blur(2rem)' }}
       ></Box>
       <Grid container justifyContent={'start'} alignItems={'flex-end'} minHeight={'80vh'} width={'100%'} color={'white'} sx={{ backgroundColor: '#242424' }}>
-        <motion.section ref={targetRef} style={{ width: '100%', height: scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}>
-          <motion.div style={{ zIndex: 15, width: width, textAlign: 'center' }}>
+        <motion.section ref={targetRef} style={{ width: '100%', height: size.width < 768 ? '40rem' : scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}>
+          <motion.div style={{ zIndex: 15, width: size.width < 768 ? '' : width, textAlign: 'center' }}>
             <Grid item sm={12}>
               <motion.div
                 style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', marginLeft: size.width < 768 ? 25 : '' }}
