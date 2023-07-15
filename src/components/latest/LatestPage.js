@@ -32,7 +32,7 @@ const LatestPage = ({ data }) => {
                       width={0}
                       height={0}
                       sizes='100vw'
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: loading ? 'none' : '' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </Box>
                   <Box className='extra' fontWeight={300} sx={{ color: 'grey' }}>
