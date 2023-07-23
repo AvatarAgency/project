@@ -14,7 +14,7 @@ const HomePage = ({ data, works }) => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
 
   return (
-    <div style={{ overflow: 'hidden', backgroundColor: '#383737' }}>
+    <div style={{   backgroundColor: '#383737' }}>
       <DeneHero />
       <Hero data={data[0].fields.biziIzle} />
       <Box display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>

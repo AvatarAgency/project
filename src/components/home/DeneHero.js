@@ -3,6 +3,7 @@ import { Grid, Box } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import useWindowSize from '../useWindowSize';
+import Typewriter from 'typewriter-effect';
 
 const DeneHero = (prop) => {
   const size = useWindowSize(0);
@@ -17,7 +18,7 @@ const DeneHero = (prop) => {
   const width = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width < 768 ? '100%' : size.width >= 1440 ? '42%' : size.width >= 992 ? '76%' : size.width >= 768 ? '65%' : size.width >= 1280 ? '46%' : '10%', '100%']
+    [size.width < 768 ? '100%' : size.width >= 1440 ? '100%' : size.width >= 992 ? '76%' : size.width >= 768 ? '65%' : size.width >= 1280 ? '46%' : '10%', '100%']
   );
   const fontSize = useTransform(
     scrollYProgress,
@@ -72,23 +73,44 @@ const DeneHero = (prop) => {
         sx={{ position: 'absolute', height: '60%', width: '100%', opacity: '0.5', borderBottomLeftRadius: '50%', borderBottomRightRadius: '50%', filter: 'blur(2rem)' }}
       ></Box>
       <Grid container justifyContent={'start'} alignItems={'flex-end'} minHeight={'80vh'} width={'100%'} color={'white'} sx={{ backgroundColor: '#242424' }}>
-        <motion.section ref={targetRef} style={{ width: '100%', height: size.width < 768 ? '40rem' : scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}>
-          <motion.div style={{ zIndex: 15, width: size.width < 768 ? '' : width, textAlign: 'center' }}>
+        <motion.section
+          ref={targetRef}
+          style={{ width: '100%', height: size.width < 768 ? '40rem' : scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}
+        >
+          <motion.div style={{ zIndex: 15, width:'100%' , textAlign: 'center' }}>
             <Grid item sm={12}>
               <motion.div
-                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', marginLeft: size.width < 768 ? 25 : '' }}
+                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', marginLeft: size.width < 768 ? 25 : '', justifyContent:'center', fontWeight:900 }}
                 variants={container}
                 initial='hidden'
                 animate='visible'
               >
-                {letters.map((letter, index) => (
+                <Typewriter
+                  options={{
+                    deleteSpeed: 20,
+                    delay: 100,
+                    loop: true,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString('MARKANIZIN ')
+                      .typeString('<span style="color: #34B197;">AVATARI </span>')
+                      .typeString('BİZ <br> OLALIM!')
+                      .pauseFor(2500)
+                      .deleteChars(20)
+                      .typeString('<span style="color: #34B197;">YÜZÜ </span>')
+                      .typeString('BİZ  <br> OLALIM!')
+                      .pauseFor(2500)
+                      .start();
+                  }}
+                />
+                {/*{letters.map((letter, index) => (
                   <motion.span variants={child} key={index} style={{ color: [11, 12, 13, 14, 15, 16, 17, 18].includes(index) ? '#34B197' : 'white' }}>
-                    {/*<Box sx={{ fontSize: { md: '4.1rem', lg: '5.4rem', sm: '3.4rem', xs: '2.9rem', xl:'5.5rem' }, fontWeight: '900', letterSpacing: { xl: '0.5rem', lg: '0.1rem' }, }}>*/}
-                    <motion.div className='extra' style={{ fontWeight: '900', letterSpacing: '0.5rem' }}>
+                     <motion.div className='extra' style={{ fontWeight: '900', letterSpacing: '0.5rem' }}>
                       {letter === ' ' ? '\u00A0' : letter}
                     </motion.div>
                   </motion.span>
-                ))}
+                ))}*/}
               </motion.div>
               {/*<HeroTyped text='MARKANIZIN AVATARI BİZ OLALIM' />*/}
             </Grid>

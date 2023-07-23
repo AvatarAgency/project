@@ -96,8 +96,7 @@ const ContactPage = () => {
           />
           <StyledInput
             inputProps={{ style: { color: 'white', fontWeight: 700, fontSize: '1.2em', fontFamily: 'Barlow Condensed' } }}
-            label='E-mail'
-            multiline
+            label='E-mail' 
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -111,7 +110,6 @@ const ContactPage = () => {
             label='Telefon'
             error={formik.touched.telefon && Boolean(formik.errors.telefon)}
             helperText={formik.touched.telefon && formik.errors.telefon}
-            multiline
             placeholder='546..'
             name='telefon'
             value={formik.values.telefon}
