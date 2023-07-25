@@ -3,26 +3,23 @@ import { Box, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 const LastWorks = ({ works }) => {
   const [selected, setSelected] = useState();
-
-  console.log(selected);
   return (
     <Grid display={'flex'} justifyContent={'center'} container spacing={0.5}>
       {works?.map((work, key) => (
         <Box
           minHeight={'80vh'}
           key={key}
-          minWidth={{xs:'30rem',sm:'30rem',lg:'20rem'}}
+          minWidth={{xs:'20rem',sm:'30rem',lg:'20rem'}}
           position={'relative'}
           display={'flex'}
           className='zort'
           onMouseOver={() => setSelected(key)}
           onMouseOut={() => setSelected()}
         >
-          {/*<Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>*/}
+          <Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>
           <Box width={'100%'} height={'100%'}>
             <Image
               src={'https:' + work.fields.projeResimler[0].fields.file.url}
@@ -69,7 +66,7 @@ const LastWorks = ({ works }) => {
               {work.fields.sirketAd}
             </Box>
           </Box>
-          {/*</Link>*/}
+          </Link>
         </Box>
       ))}
     </Grid>

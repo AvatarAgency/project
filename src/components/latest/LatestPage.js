@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const LatestPage = ({ data }) => {
   const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -1600]);
 
   return (
     <div>
@@ -60,7 +60,7 @@ const LatestPage = ({ data }) => {
       >
         <motion.h6 style={{ x }} className='title'>
           Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor -
-          Daha Fazla Gor
+          Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor - Daha Fazla Gor
         </motion.h6>
       </Box>
     </div>

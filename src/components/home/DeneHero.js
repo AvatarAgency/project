@@ -56,7 +56,7 @@ const DeneHero = (prop) => {
       },
     },
   };
-  const letters = Array.from('MARKANIZIN AVATARI BİZ OLALIM');
+  //const letters = Array.from('MARKANIZIN AVATARI BİZ OLALIM');
 
   //useEffect(() => {
   //  const getFont = () => {
@@ -80,7 +80,7 @@ const DeneHero = (prop) => {
           <motion.div style={{ zIndex: 15, width:'100%' , textAlign: 'center' }}>
             <Grid item sm={12}>
               <motion.div
-                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', marginLeft: size.width < 768 ? 25 : '', justifyContent:'center', fontWeight:900 }}
+                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap',  justifyContent:'center', fontWeight:900 }}
                 variants={container}
                 initial='hidden'
                 animate='visible'

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const SlugPage = ({ post, others }) => {
   const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -1600]);
   return (
     <>
       <Box width={'100%'} minHeight={'20vh'} pt={10} px={8}>
@@ -55,7 +55,7 @@ const SlugPage = ({ post, others }) => {
       <Box mt={5} display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
           BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI -
-          BİR SONRAKİ YAZI - BİR SONRAKİ YAZI
+          BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI - BİR SONRAKİ YAZI
         </motion.h6>
       </Box>
       <Box width={'100%'} minHeight={'20vh'} pt={10} px={8}>

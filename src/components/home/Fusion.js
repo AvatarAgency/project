@@ -90,7 +90,7 @@ const Fusion = (props) => {
   const imageValue = useTransform(scrollYProgress, [0, 1], ['-350%', '0%']);
   const rightItems = useTransform(scrollYProgress, [0, 1], ['350%', '0%']);
   const opacity = useTransform(scrollYProgress, [0.99, 1], [1, 0]);
-  const x = useTransform(scrollYProgress, [0.99, 1], ['0%', '-50%']);
+  const y = useTransform(scrollYProgress, [0.99, 1], ['0%', '-50%']);
 
   return (
     <Box id='style-2' sx={{ backgroundColor: '#383737', width: '100%',  }}>
@@ -103,10 +103,10 @@ const Fusion = (props) => {
           <Composition />
         </ScrollControls>
       </Canvas>*/}
-      <motion.section ref={containerRef} style={{ opacity, transition: '1s ease-in', x }}>
+      {/*<motion.section ref={containerRef}  >
         <Box className='scroll-container'  display={'flex'} justifyContent={'center'} alignItems={'center'} height={'50rem'} width={'100%'} color={'white'}>
           <Box className='img-container' sx={{ flexDirection: 'column', justifyContent: 'end' }}>
-            <motion.div className='img-inner' style={{ translateX: imageValue,   }}>
+            <motion.div className='img-inner' style={{ translateX: imageValue, opacity }}>
               <Image width={170} src={Watch} alt='a green plant' />
             </motion.div>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
@@ -142,7 +142,7 @@ const Fusion = (props) => {
             </Box>
           </Box>
         </Box>
-      </motion.section>
+      </motion.section>*/}
       <Animation/>
 
       {/*<Container maxWidth='xl' sx={{ minHeight: '35rem', mt: 7 }}>
