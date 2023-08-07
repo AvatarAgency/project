@@ -83,3 +83,23 @@ button{
   top: 0;
   
 }
+.Mui-selected{
+  transform: scale(1.2);
+  transition: 500ms ease-in;
+   color: white !important;
+  font-weight: 800;
+}
+.MuiTab-root{
+  font-size: 2.2em !important;
+  margin-right: 25px;
+  color: grey;
+  font-weight: 600;
+}
+.MuiTabs-indicator{
+  display: 'none' !important;
+  width: 0px !important;
+}
+.MuiTabs-scrollButtons{
+  color: white;
+  font-weight: 800;
+}

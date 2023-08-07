@@ -25,16 +25,20 @@ const navItems = [
     link: '/',
   },
   {
-    name: 'İşlerimiz',
+    name: 'Biz Kimiz?',
+    link: '/biz-kimiz',
+  },
+  {
+    name: 'Ne Yapıyoruz?',
+    link: '/ne-yapiyoruz',
+  },
+  {
+    name: 'Kime Yapıyoruz?',
     link: '/works',
   },
   {
-    name: 'En Son',
-    link: '/latest',
-  },
-  {
     name: 'Bize Ulaşın',
-    link: '/contact',
+    link: '/iletisim',
   },
 ];
 
@@ -96,9 +100,6 @@ const Header = (props) => {
               </Link>
             ))}
           </Box>
-          <Typography className='cadiz' fontWeight={900} fontStyle={'italic'}>
-            Hadi Başlayalım
-          </Typography>
         </Toolbar>
       </AppBar>
       <Box component='nav'>

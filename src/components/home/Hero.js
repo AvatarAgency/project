@@ -49,7 +49,7 @@ const Hero = ({ data }) => {
               {data}
             </Grid>
           </Grid>
-          <Grid spacing={15} container sx={{ px: { lg: 10, md: 0 }, mb: 6 }} alignItems={'center'} display={'flex'} flexDirection={'row'}>
+          <Grid spacing={15} container sx={{ mb: 6 }} alignItems={'center'} display={'flex'} flexDirection={'row'}>
             <Grid item md={6} lg={3} sm={6} xs={12} sx={{ textAlign: 'center' }}>
               <Image src={Microsoft} alt='microsoft' />
             </Grid>

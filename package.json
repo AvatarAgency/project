@@ -25,6 +25,7 @@
     "next": "13.4.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-rotating-text": "^1.4.1",
     "react-use-refs": "^1.0.1",
     "sharp": "^0.32.2",
     "three": "^0.153.0",

@@ -1,17 +1,25 @@
 'use client';
 import { Grid, Box } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import useWindowSize from '../useWindowSize';
 import Typewriter from 'typewriter-effect';
 
 const DeneHero = (prop) => {
+  const [zort, setzort ] = React.useState('block')
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setzort(latest > 10 ? 'flex' :'block')
+  })
+
   const size = useWindowSize(0);
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start end', 'end start'],
   });
+ 
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], ['170vh', '-40vh']);
@@ -23,7 +31,7 @@ const DeneHero = (prop) => {
   const fontSize = useTransform(
     scrollYProgress,
     [0, 1],
-    [size.width >= 1440 ? '16rem' : size.width >= 992 ? '15rem' : size.width >= 768 ? '10rem' : size.width <= 600 ? '5.3rem' : size.width >= 1280 ? '13.7rem' : '', '1rem']
+    [size.width >= 1440 ? '20rem' : size.width >= 992 ? '15rem' : size.width >= 768 ? '10rem' : size.width <= 600 ? '5.3rem' : size.width >= 1280 ? '16.7rem' : '', '1rem']
   );
 
   const container = {
@@ -75,35 +83,43 @@ const DeneHero = (prop) => {
       <Grid container justifyContent={'start'} alignItems={'flex-end'} minHeight={'80vh'} width={'100%'} color={'white'} sx={{ backgroundColor: '#242424' }}>
         <motion.section
           ref={targetRef}
-          style={{ width: '100%', height: size.width < 768 ? '40rem' : scale, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize }}
+          style={{ width: '100%', height: size.width < 768 ? '40rem' : scale, display: 'flex', justifyContent: 'center', alignItems: 'center',  }}
         >
-          <motion.div style={{ zIndex: 15, width:'100%' , textAlign: 'center' }}>
+          <motion.div style={{ zIndex: 15, width: '100%', textAlign: 'center' }}>
             <Grid item sm={12}>
               <motion.div
-                style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap',  justifyContent:'center', fontWeight:900 }}
+                style={{ transition:'200ms ease-in', overflow: 'hidden', display: zort, flexWrap: 'wrap', justifyContent: 'center', fontWeight: 900, fontSize:size.width > 1440 ? '11.3rem' : size.width >= 992 ? '5rem' : size.width >= 768 ? '4rem' : size.width <= 600 ? '5.3rem' : size.width >= 1280 ? '16.7rem' : size.width <= 1440 ? '7.3rem' :'' }}
                 variants={container}
                 initial='hidden'
                 animate='visible'
               >
+                 <span style={{marginRight:zort === 'flex' ? '10px' : ''}} >MARKANIZIN</span> 
                 <Typewriter
                   options={{
-                    deleteSpeed: 20,
-                    delay: 100,
+                    deleteSpeed: 10,
+                    delay: 60,
                     loop: true,
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString('MARKANIZIN ')
                       .typeString('<span style="color: #34B197;">AVATARI </span>')
-                      .typeString('BİZ <br> OLALIM!')
-                      .pauseFor(2500)
-                      .deleteChars(20)
+                      .pauseFor(500)
+                      .deleteAll()
                       .typeString('<span style="color: #34B197;">YÜZÜ </span>')
-                      .typeString('BİZ  <br> OLALIM!')
-                      .pauseFor(2500)
+                      .pauseFor(500)
+                      .deleteAll()
+                      .typeString('<span style="color: #34B197;">YARINI </span>')
+                      .pauseFor(500)
+                      .deleteAll()
+                      .typeString('<span style="color: #34B197;">MARKASI </span>')
+                      .pauseFor(500)
+                      .deleteAll()
+                      .typeString('<span style="color: #34B197;">DÜNYASI </span>')
                       .start();
                   }}
                 />
+                           <span  >BİZ OLALIM</span> 
+
                 {/*{letters.map((letter, index) => (
                   <motion.span variants={child} key={index} style={{ color: [11, 12, 13, 14, 15, 16, 17, 18].includes(index) ? '#34B197' : 'white' }}>
                      <motion.div className='extra' style={{ fontWeight: '900', letterSpacing: '0.5rem' }}>

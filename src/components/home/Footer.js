@@ -45,9 +45,9 @@ const Footer = () => {
       <Container maxWidth='xl' sx={{ minHeight: '25rem' }}>
         <Box display={'flex'} pt={7} pb={12} width={'100%'} flexDirection={'column'} color={'white'} height={'100%'} textAlign={'center'}>
           <Box className='extra' sx={{ fontSize: { xs: '2rem', sm: '4.5rem', md: '6rem', lg: '7rem' } }} fontWeight={900}>
-            HEMEN👋TANIŞALIM
+            HEMEN 👋 TANIŞALIM
           </Box>
-          <Box className='extra' fontWeight={400} sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3.8rem', lg: '4rem' } }}>
+          <Box className='extra' fontWeight={400} mb={2} sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3.4rem', lg: '3.6rem' } }}>
             Seninle konuşmayı çok isteriz
           </Box>
           <Box component={'form'} ref={form} onSubmit={sendEmail} display={{ xs: 'block', sm: 'flex' }} flexDirection={'row'} width={'100%'} mt={3} justifyContent={'center'}>
@@ -94,7 +94,7 @@ const Footer = () => {
         <Container maxWidth='xl'>
           <Grid container>
             <Grid item xs={12} md={6} display={'block'} sx={{ textAlign: { xs: 'center', md: 'unset' }, mb: { xs: 5, md: 2 } }}>
-              <Box width={'70%'} fontSize={'1.2em'} fontWeight={200}>
+              <Box width={{xs:'100%',md:'70%'}} fontSize={'1.2em'} fontWeight={200}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lacinia ipsum. Donec accumsan, tortor vel volutpat ultricies, nunc dolor feugiat Leo, quis commodo
                 lorem tortor et ex. Aliquam erat volutpat. Pellentesque sem sapien, tristique lobortis ullamcorper quis, vestibulum pharetra sapien.
               </Box>
