@@ -88,7 +88,7 @@ const DeneHero = (prop) => {
           <motion.div style={{ zIndex: 15, width: '100%', textAlign: 'center' }}>
             <Grid item sm={12}>
               <motion.div
-                style={{ transition:'200ms ease-in', overflow: 'hidden', display: zort, flexWrap: 'wrap', justifyContent: 'center', fontWeight: 900, fontSize:size.width > 1440 ? '11.3rem' : size.width >= 992 ? '5rem' : size.width >= 768 ? '4rem' : size.width <= 600 ? '5.3rem' : size.width >= 1280 ? '16.7rem' : size.width <= 1440 ? '7.3rem' :'' }}
+                style={{ transition:'200ms ease-in', overflow: 'hidden', display: zort, flexWrap: 'wrap', justifyContent: 'center', fontWeight: 900, fontSize:size.width >= 1440 ? '7.3rem' : size.width >= 992 ? '5rem' : size.width >= 768 ? '4rem' : size.width <= 600 ? '5.3rem' : '' }}
                 variants={container}
                 initial='hidden'
                 animate='visible'
@@ -102,19 +102,20 @@ const DeneHero = (prop) => {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString('<span style="color: #34B197;">AVATARI </span>')
+                      .typeString('<span style="color: #34B197;">AVATARI</span>')
                       .pauseFor(500)
                       .deleteAll()
-                      .typeString('<span style="color: #34B197;">YÜZÜ </span>')
+                      .typeString('<span style="color: #34B197;">YÜZÜ</span>')
                       .pauseFor(500)
                       .deleteAll()
-                      .typeString('<span style="color: #34B197;">YARINI </span>')
+                      .typeString('<span style="color: #34B197;">YARINI</span>')
                       .pauseFor(500)
                       .deleteAll()
-                      .typeString('<span style="color: #34B197;">MARKASI </span>')
+                      .typeString('<span style="color: #34B197;">MARKASI</span>')
                       .pauseFor(500)
                       .deleteAll()
-                      .typeString('<span style="color: #34B197;">DÜNYASI </span>')
+                      .typeString('<span style="color: #34B197;">DÜNYASI</span>')
+                      .pauseFor(500)
                       .start();
                   }}
                 />

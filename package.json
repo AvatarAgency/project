@@ -28,6 +28,7 @@
     "react-rotating-text": "^1.4.1",
     "react-use-refs": "^1.0.1",
     "sharp": "^0.32.2",
+    "swiper": "^10.1.0",
     "three": "^0.153.0",
     "typewriter-effect": "^2.20.1",
     "yup": "^1.2.0"

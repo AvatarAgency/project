@@ -16,6 +16,8 @@ import Image from 'next/image';
 import Loogo from '../icons/Logo.svg';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname} from 'next/navigation'
+import LandingLogo from '../icons/LandingLogo.svg'
 
 const drawerWidth = 240;
 //const navItems = ['Anasayfa', 'İşlerimiz', 'En Son', 'Bize Ulaşın'];
@@ -46,7 +48,7 @@ const Header = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [deger, setDeger] = React.useState(0);
-
+  const pathname = usePathname();
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -88,7 +90,7 @@ const Header = (props) => {
           </IconButton>
           <Link href={'/'}>
             <Typography variant='h6' component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Image src={Loogo} alt='logo' />
+              <Image src={ pathname === '/' ? LandingLogo : Loogo} alt='logo' />
             </Typography>
           </Link>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
