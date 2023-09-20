@@ -114,7 +114,9 @@ const Fusion = () => {
           <Box
             width={'100%'}
             height={'100%'}
-            display={'flex'}
+            display={{ xs: 'block', md: 'flex' }}
+            textAlign={{ xs: 'center', md: 'unset' }}
+            mt={{ xs: 5, sm: 0 }}
             justifyContent={'space-evenly'}
             alignItems={'center'}
           >
