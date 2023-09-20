@@ -89,14 +89,14 @@ button{
   font-weight: 900;
 }
 
-@media   screen and (min-width: 1400px) {
+@media only  screen and (min-width: 1600px) {
   .zort:hover{
-    flex-basis: 80em;
+    flex-basis: 120em;
   }
 }
-@media   screen and (max-width: 1100px) {
+@media  only screen and (min-width: 1100px) {
   .zort:hover{
-    flex-basis: 50em;
+    flex-basis: 40em;
   }
 }
 @media   screen and (max-width: 1024px) {

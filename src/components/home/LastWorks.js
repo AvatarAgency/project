@@ -19,7 +19,7 @@ const LastWorks = ({ works }) => {
           onMouseOver={() => setSelected(key)}
           onMouseOut={() => setSelected()}
         >
-          {/*<Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>*/}
+          <Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>
           <Box width={'100%'} height={'100%'}>
             <Image
               src={'https:' + work.fields.projeResimler[0].fields.file.url}
@@ -65,7 +65,7 @@ const LastWorks = ({ works }) => {
               {work.fields.sirketAd}
             </Box>
           </Box>
-          {/*</Link>*/}
+          </Link>
         </Box>
       ))}
     </Grid>
