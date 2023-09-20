@@ -72,11 +72,35 @@ button{
   color: white;
   transition: flex-basis 500ms ease-in;
   flex: 1 0 10em;  
-  
 }
-.zort:hover{
-  flex-basis: 30em;
+.fade-in-text {
+    animation: fadeIn 1.5s ease-in;
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.sirket{
+  transform: rotate(-90deg);
+  bottom: 100px;
+  color: white;
+  position: absolute;
+   font-size: 2em;
+  font-weight: 900;
+}
+
+@media   screen and (min-width: 1200px) {
+  .zort:hover{
+    flex-basis: 70em;
+  }
+}
+ 
+@media   screen and (max-width: 1024px) {
+  .zort:hover{
+    flex-basis: 33em;
+  }
+}
+
 .anim{
   position: sticky;
   position: -webkit-sticky;

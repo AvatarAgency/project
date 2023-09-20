@@ -287,8 +287,9 @@ const WedoPage = ({ data }) => {
                 <SwiperSlide key={idx}>
                   <Box
                     sx={{
-                      fontSize: { lg: '6em', md: '4em', xs: '2em' },
+                      fontSize: { lg: '4.5em', md: '4.5em', xs: '2em',xl:'5.2em' },
                       color: idx == value ? 'white' : ' gray',
+                      textTransform:'uppercase'
                     }}
                   >
                     {item.fields.title}
@@ -299,7 +300,7 @@ const WedoPage = ({ data }) => {
           </div>
         </Box>
         <Box display={'flex'} justifyContent={'center'} minHeight={'22rem'} width={'100%'} mb={10}>
-          <Box display={'flex'} width={{xs:'100%',md:'50%'}}>
+          <Box display={'flex'} width={{xs:'100%',md:'80%',lg:'70%', xl:'50%'}}>
             {data.map((item, idx) => (
               <CustomTabPanel key={idx} value={value} index={idx}>
                 <WedoAccordion data={item.fields.accordions} />

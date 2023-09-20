@@ -34,11 +34,11 @@ const HomePage = ({ data, works }) => {
         </motion.h6>
       </Box>
       <Fusion />
-      <Grid container spacing={2}>
+      <Grid container mt={2} spacing={2}>
         <Grid container spacing={2}>
           {data[0].fields.huzurlarinizda.map((image, key) => (
             <Grid key={key} minHeight={'70vh'} overflow={'hidden'} item xs={12} md={4}>
-              {/*<Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />*/}
+              <Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />
               <motion.div
                 transition={{ delay: 0.3 * key }}
                 initial={{ opacity: 0, x: size.width < 600 ? 0 : 20 }}

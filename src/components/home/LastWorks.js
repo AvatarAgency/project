@@ -12,7 +12,7 @@ const LastWorks = ({ works }) => {
         <Box
           minHeight={'80vh'}
           key={key}
-          minWidth={{xs:'20rem',sm:'30rem',lg:'20rem'}}
+          minWidth={{xs:'20rem',sm:'30rem',lg:'20rem',md:'15rem'}}
           position={'relative'}
           display={'flex'}
           className='zort'
@@ -46,11 +46,10 @@ const LastWorks = ({ works }) => {
           >
             {selected == key && (
               <Box
-                className='extra'
+                className='fade-in-text'
                 sx={{
                   fontWeight: '900',
-                  zIndex: 9999,
-                  ml: '1.5rem',
+                   ml: '1.5rem',
                   fontSize: '2em',
                   color: 'white',
                   position: 'absolute',
@@ -59,10 +58,10 @@ const LastWorks = ({ works }) => {
                   transform: 'translate(-50%,-50%)',
                 }}
               >
-                {work.fields.sirketAd}
+                {work.fields.projeContent.slice(0,240)}...
               </Box>
             )}
-            <Box className='extra' sx={{ fontWeight: '900', zIndex: 9999, ml: '1.5rem', fontSize: '2em', color: 'white', position: 'absolute', bottom: 40 }}>
+            <Box className='sirket' >
               {work.fields.sirketAd}
             </Box>
           </Box>

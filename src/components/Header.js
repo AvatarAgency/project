@@ -17,7 +17,7 @@ import Loogo from '../icons/Logo.svg';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname} from 'next/navigation'
-import LandingLogo from '../icons/LandingLogo.svg'
+import LandingLogo from '../icons/avatarlogo.png'
 
 const drawerWidth = 240;
 //const navItems = ['Anasayfa', 'İşlerimiz', 'En Son', 'Bize Ulaşın'];
@@ -89,8 +89,11 @@ const Header = (props) => {
             <MenuIcon />
           </IconButton>
           <Link href={'/'}>
-            <Typography variant='h6' component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
-              <Image src={ pathname === '/' ? LandingLogo : Loogo} alt='logo' />
+            <Typography  component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
+              {
+                pathname === '/' ?<Image width={175} src={LandingLogo} alt='logo' /> : <Image src={Loogo} alt='logo' />
+              }
+              {/*<Image src={ pathname === '/' ? LandingLogo : Loogo} alt='logo' />*/}
             </Typography>
           </Link>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
