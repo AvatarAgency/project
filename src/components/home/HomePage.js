@@ -9,6 +9,7 @@ import Fusion from './Fusion';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 import useWindowSize from '../useWindowSize';
+import Team from './Team';
 
 const HomePage = ({ data, works }) => {
   const { scrollYProgress } = useScroll();
@@ -39,7 +40,8 @@ const HomePage = ({ data, works }) => {
         </Box>
       <Grid container mt={2} spacing={2}>
         <Grid container spacing={2}>
-          {data[0].fields.huzurlarinizda.map((image, key) => (
+         <Team data={data[0].fields.huzurlarinizda}/>
+          {/*{data[0].fields.huzurlarinizda.map((image, key) => (
             <Grid key={key} minHeight={'70vh'} overflow={'hidden'} item xs={12} md={4}>
               <Box component={'img'} src={image.fields.file.url} sx={{ width: '100%', height: '100%', backgroundColor: 'white', objectFit: 'cover' }} />
               <motion.div
@@ -60,7 +62,7 @@ const HomePage = ({ data, works }) => {
                 />
               </motion.div>
             </Grid>
-          ))}
+          ))}*/}
         </Grid>
       </Grid>
       {/*<Footer data={data} isHome={true} />*/}
