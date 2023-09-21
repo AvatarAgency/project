@@ -81,8 +81,6 @@ button{
   100% { opacity: 1; }
 }
 .sirket{
-  transform: rotate(-90deg);
-  bottom: 100px;
   color: white;
   position: absolute;
    font-size: 2em;
@@ -99,7 +97,7 @@ button{
     flex-basis: 40em;
   }
 }
-@media   screen and (max-width: 1024px) {
+@media  only screen and (max-width: 1024px) {
   .zort:hover{
     flex-basis: 33em;
   }

@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import React, { useRef } from 'react';
-import Cetvel from '../../icons/fusion/cetvel.png';
 import Earphone from '../../icons/fusion/earphone.png';
 import Coffe from '../../icons/fusion/fusion-coffee.png';
 import Glasses from '../../icons/fusion/fusion-glasses.png';
@@ -9,15 +8,10 @@ import Watch from '../../icons/fusion/watch.png';
 import Plane from '../../icons/fusion/fusion-plane.png';
 import Macbook from '../../icons/fusion/macbook.png';
 import Lenis from '@studio-freight/lenis';
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useInView,
-  useAnimate,
-} from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import useWindowSize from '../useWindowSize';
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -28,11 +22,12 @@ function useParallaxOpacity(value, distance) {
 
 const Content = ({ children }) => {
   const itemRef = useRef(null);
+  const size = useWindowSize(0);
 
   const { scrollYProgress } = useScroll({
     target: itemRef,
   });
-  const y = useParallax(scrollYProgress, 400);
+  const y = useParallax(scrollYProgress, size.width < 600 ? 200 : 400);
   const opacity = useParallaxOpacity(scrollYProgress, 1);
 
   return (
@@ -56,32 +51,32 @@ const Content = ({ children }) => {
 const Fusion = () => {
   const list = [
     {
-      image: Cetvel,
+      image: Glasses,
       content: 'Yazılım',
     },
     {
       image: Pen,
-      content: 'Yazılım',
+      content: 'Tasarım',
     },
     {
       image: Plane,
-      content: 'Yazılım',
+      content: 'Pazarlama',
     },
     {
       image: Macbook,
-      content: 'Yazılım',
+      content: 'İÇ İLETİŞİM',
     },
     {
       image: Earphone,
-      content: 'Yazılım',
+      content: 'Sosyal Medya',
     },
     {
       image: Coffe,
-      content: 'Yazılım',
+      content: 'Reklam',
     },
     {
       image: Watch,
-      content: 'Yazılım',
+      content: 'PRODÜKSİYON',
     },
   ];
   useEffect(() => {
@@ -124,14 +119,14 @@ const Fusion = () => {
               <Image src={item.image} height={250} />
             </Box>
             <Box></Box>
-            <Box fontWeight={900} fontSize={'4em'} textTransform={'uppercase'}>
+            <Box fontWeight={900} fontSize={{xs:'3.5rem', md:'4em'}} textTransform={'uppercase'} sx={{wordBreak:'break-word'}}>
               {item.content}
             </Box>
           </Box>
         </Content>
       ))}
 
-      <Box width={'100%'} height={'25rem'}></Box>
+      <Box width={'100%'} height={'15rem'}></Box>
 
       {/*<Box
         className='extra'

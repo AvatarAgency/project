@@ -25,19 +25,22 @@
   cursor:pointer
 }
 
-@media (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .swiper_container {
-    max-width: 100vh
+    max-width: 100%
   }
   .swiper-slide {
     width: 24rem !important;
     height: 8rem !important;
-  }
-
+  }}
+  @media screen and (max-width: 1280px) {
+    .swiper_container {
+      max-width: 91%
+    }
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .swiper_container {
-    width: 30vh;
+    width: 50vh;
   }
   .swiper-slide {
     width: 8rem !important;

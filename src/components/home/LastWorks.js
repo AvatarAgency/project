@@ -61,7 +61,7 @@ const LastWorks = ({ works }) => {
                 {work.fields.projeContent.slice(0,240)}...
               </Box>
             )}
-            <Box className='sirket' >
+            <Box className='sirket' sx={{ transform: {xs:'none',md:'rotate(-90deg)'}, ml:{xs:'1rem', sm:'0'}, bottom:{xs:10,md:100}}} >
               {work.fields.sirketAd}
             </Box>
           </Box>

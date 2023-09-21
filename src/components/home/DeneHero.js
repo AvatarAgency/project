@@ -139,7 +139,7 @@ const DeneHero = (prop) => {
                       : size.width >= 768
                       ? '4rem'
                       : size.width <= 600
-                      ? '5.3rem'
+                      ? '4.3rem'
                       : '',
                 }}
                 variants={container}

@@ -95,8 +95,7 @@ const Footer = () => {
           <Grid container>
             <Grid item xs={12} md={6} display={'block'} sx={{ textAlign: { xs: 'center', md: 'unset' }, mb: { xs: 5, md: 2 } }}>
               <Box width={{xs:'100%',md:'70%'}} fontSize={'1.2em'} fontWeight={200}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lacinia ipsum. Donec accumsan, tortor vel volutpat ultricies, nunc dolor feugiat Leo, quis commodo
-                lorem tortor et ex. Aliquam erat volutpat. Pellentesque sem sapien, tristique lobortis ullamcorper quis, vestibulum pharetra sapien.
+              Faaliyet gösterdiği alanda başarılı bir marka konumlandırması için markanıza özenle yaklaşıyor, entegre iletişim yaklaşımımızla marka değerinize değer katıyoruz!
               </Box>
               <Button
                 variant='contained'

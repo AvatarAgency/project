@@ -287,7 +287,7 @@ const WedoPage = ({ data }) => {
                 <SwiperSlide key={idx}>
                   <Box
                     sx={{
-                      fontSize: { lg: '4.5em', md: '4.5em', xs: '2em',xl:'5.2em' },
+                      fontSize: { lg: '3.5em', md: '3.5em', xs: '2em',xl:'5.2em' },
                       color: idx == value ? 'white' : ' gray',
                       textTransform:'uppercase'
                     }}

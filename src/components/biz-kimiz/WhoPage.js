@@ -67,7 +67,7 @@ const WhoPage = () => {
       </Box>
       <Box width={'100%'} height={'30rem'} mt={5}>
         <Box backgroundColor='white' mx={6} height={'100%'}>
-          sadsa
+          resim
         </Box>
       </Box>
       <Box width={'100%'} height={'30rem'} mt={5}>

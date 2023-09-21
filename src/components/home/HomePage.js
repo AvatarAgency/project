@@ -34,6 +34,9 @@ const HomePage = ({ data, works }) => {
         </motion.h6>
       </Box>
       <Fusion />
+        <Box width={'100%'} display={'flex'} >
+          <Box sx={{color: 'white', fontWeight: 900, fontSize: { xs: '4.3rem', sm: '4.5rem', md: '6rem', lg: '7rem'},m:{xs:'auto',md:''}}}>EKİBİMİZ</Box>
+        </Box>
       <Grid container mt={2} spacing={2}>
         <Grid container spacing={2}>
           {data[0].fields.huzurlarinizda.map((image, key) => (

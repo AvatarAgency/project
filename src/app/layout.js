@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/home/Footer';
 
 
-const roboto = Barlow_Condensed({
+const barlow = Barlow_Condensed({
   weight: ['200', '400', '500', '600', '700','800', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -16,7 +16,7 @@ const roboto = Barlow_Condensed({
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={roboto.className}>
+      <body className={barlow.className}>
         <CssBaseline />
         <Header />
         {children}
