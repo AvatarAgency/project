@@ -29,7 +29,7 @@ const Team = ({ data }) => {
           slidesPerView={'auto'}
           slideToClickedSlide={true}
           autoplay={{
-            delay: 2000,
+            delay: 3000,
             disableOnInteraction: true,
             
           }}
@@ -44,7 +44,7 @@ const Team = ({ data }) => {
           className='swiper-container'
         >
           {data.map((item, idx) => (
-            <SwiperSlide key={idx} style={{width:500}}>
+            <SwiperSlide key={idx} style={{width:size.width < 500 ? 200 : size.width > 1270 ? 500 : 240}}>
               <Box
                 sx={{ width: '100%', height: '700px', position: 'relative' }}
               >
