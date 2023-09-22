@@ -1,19 +1,21 @@
 'use client';
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Divider, Grid } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const WorksPage = ({ works }) => {
   return (
     <>
-      <Grid container minHeight={'100vh'} justifyContent={'center'} alignItems={'center'} display={'flex'} textAlign={'center'} width={'100%'} color={'white'}>
-        <Box width={'100%'}>
-          <Box className='extra' sx={{ fontSize: { xl: '13em', xs: '4em', sm: '6em', md: '8em', lg: '10em' }, fontWeight: 800 }}>
-            MARKANIZIN <br></br> <span style={{ color: '#34B197' }}>AVATARI</span> <br></br> BİZ OLALIM{' '}
+      <Grid container mb={5}  justifyContent={'center'}   display={'flex'} textAlign={'center'} width={'100%'} color={'white'}>
+        <Box width={'100%'} mt={5}>
+          <Box   sx={{ fontSize: { xl: '15em', xs: '5.3em', sm: '6em', md: '7.6em', lg: '11em' }, fontWeight: 800, lineHeight:'1.1em' , wordBreak:'break-word'}}>
+            MARKANIZIN<span style={{ color: '#34B197', marginLeft:{md:'2rem'} }}>AVATARI</span> <br></br> BİZ OLALIM{' '}
           </Box>
         </Box>
       </Grid>
+      <Divider sx={{ borderTop: '3px solid #707070' }} />
+
       <Box
         pl={{ xs: 0, md: 10 }}
         mb={2}

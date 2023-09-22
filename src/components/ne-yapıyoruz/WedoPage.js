@@ -287,9 +287,10 @@ const WedoPage = ({ data }) => {
                 <SwiperSlide key={idx}>
                   <Box
                     sx={{
-                      fontSize: { lg: '3.5em', md: '3.5em', xs: '2em',xl:'5.2em' },
+                      fontSize: { lg: '3.5em', md: '4em', xs: '2em',xl:'4.6em' },
                       color: idx == value ? 'white' : ' gray',
-                      textTransform:'uppercase'
+                      textTransform:'uppercase',
+                      fontWeight:900
                     }}
                   >
                     {item.fields.title}
@@ -315,6 +316,7 @@ const WedoPage = ({ data }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            fontWeight:900,
             fontSize: {
               lg: '6em',
               md: '5em',

@@ -2,16 +2,16 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
 import './style.css';
-import Typewriter from 'typewriter-effect';
 import LastWorks from '../home/LastWorks';
+import Team from '../home/Team';
 
-const WhoPage = () => {
+const WhoPage = ({data}) => {
   return (
     <div style={{ width: '100%' }}>
       <Box width={'100%'} pt={10} px={8}>
         <Box display={'block'} width={'100%'} textAlign={{ xs: 'center', sm: 'unset' }} mb={{ xs: 5, sm: 5, md: 10 }}>
           <Box
-            sx={{ fontSize: { xl: '15em', xs: '2.5em', sm: '4.2em', md: '6em', lg: '9.2em' }, fontWeight: 800, display: 'flex', letterSpacing: 2.3, width: '100%' }}
+            sx={{ fontSize: { xl: '15em', xs: '2.5em', sm: '4.2em', md: '6em', lg: '9.2em' }, fontWeight: 800, display: 'flex', letterSpacing: 2.3, width: '100%',lineHeight:'1.1em' }}
             color={'white'}
           >
             AVATAR BİR KREATİF ENTEGRE İLETİŞİM AJANSIDIR
@@ -70,7 +70,7 @@ const WhoPage = () => {
           resim
         </Box>
       </Box>
-      <Box width={'100%'} height={'30rem'} mt={5}>
+      <Box width={'100%'}   mt={5}>
         <Box
           pl={{ xs: 0, md: 10 }}
           mb={2}
@@ -81,7 +81,7 @@ const WhoPage = () => {
         >
           EKİBİMİZ
         </Box>
-        <LastWorks/>
+        <Team data={data[0].fields.huzurlarinizda}/>
       </Box>
     </div>
   );

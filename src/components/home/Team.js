@@ -29,9 +29,8 @@ const Team = ({ data }) => {
           slidesPerView={'auto'}
           slideToClickedSlide={true}
           autoplay={{
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: true,
-            
           }}
           coverflowEffect={{
             rotate: 0,
@@ -44,12 +43,12 @@ const Team = ({ data }) => {
           className='swiper-container'
         >
           {data.map((item, idx) => (
-            <SwiperSlide key={idx} style={{width:size.width < 500 ? 200 : size.width > 1270 ? 500 : 240}}>
+            <SwiperSlide key={idx} className='swiper_slider'>
               <Box
                 sx={{ width: '100%', height: '700px', position: 'relative' }}
               >
                 <Image
-                 fill
+                  fill
                   style={{ objectFit: 'cover' }}
                   src={'https:' + item.fields.file.url}
                 />
@@ -70,8 +69,12 @@ const Team = ({ data }) => {
                   color={'white'}
                   display={'block'}
                 >
-                  <Box fontSize={{xs:'1.2em',md:'2.5em',lg:'3em'}}>{item.fields.title}</Box>
-                  <Box fontSize={{xs:'0.8em', md:'1.4em',lg:'1.7em'}}>{item.fields.description}</Box>
+                  <Box fontSize={{ xs: '1.2em', md: '2.5em', lg: '3em' }}>
+                    {item.fields.title}
+                  </Box>
+                  <Box fontSize={{ xs: '0.8em', md: '1.4em', lg: '1.7em' }}>
+                    {item.fields.description}
+                  </Box>
                 </Box>
               </Box>
             </SwiperSlide>

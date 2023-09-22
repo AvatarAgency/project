@@ -27,7 +27,7 @@ const Content = ({ children }) => {
   const { scrollYProgress } = useScroll({
     target: itemRef,
   });
-  const y = useParallax(scrollYProgress, size.width < 600 ? 100 : 300);
+  const y = useParallax(scrollYProgress, size.width < 600 ? 150 : 300);
   const opacity = useParallaxOpacity(scrollYProgress, 1);
 
   return (
@@ -119,7 +119,12 @@ const Fusion = () => {
               <Image src={item.image} height={250} />
             </Box>
             <Box></Box>
-            <Box fontWeight={900} fontSize={{xs:'3.5rem', md:'4em'}} textTransform={'uppercase'} sx={{wordBreak:'break-word'}}>
+            <Box
+              fontWeight={900}
+              fontSize={{ xs: '3.5rem', md: '4em' }}
+              textTransform={'uppercase'}
+              sx={{ wordBreak: 'break-word' }}
+            >
               {item.content}
             </Box>
           </Box>

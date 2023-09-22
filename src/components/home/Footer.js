@@ -44,7 +44,7 @@ const Footer = () => {
     <div style={{ backgroundColor: '#383737' }}>
       <Container maxWidth='xl' sx={{ minHeight: '25rem' }}>
         <Box display={'flex'} pt={7} pb={12} width={'100%'} flexDirection={'column'} color={'white'} height={'100%'} textAlign={'center'}>
-          <Box className='extra' sx={{ fontSize: { xs: '2rem', sm: '4.5rem', md: '6rem', lg: '7rem' } }} fontWeight={900}>
+          <Box className='extra' sx={{ fontSize: { xs: '2.5rem', sm: '4.5rem', md: '6rem', lg: '7rem' } }} fontWeight={900}>
             HEMEN 👋 TANIŞALIM
           </Box>
           <Box className='extra' fontWeight={400} mb={2} sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3.4rem', lg: '3.6rem' } }}>
@@ -81,6 +81,7 @@ const Footer = () => {
                 'color': 'black',
                 'fontSize': '1.2em',
                 ':hover': { backgroundColor: 'white' },
+                mt:{xs:2,md:0}
               }}
               variant='contained'
               type='submit'
