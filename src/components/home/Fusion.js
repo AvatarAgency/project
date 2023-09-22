@@ -27,7 +27,7 @@ const Content = ({ children }) => {
   const { scrollYProgress } = useScroll({
     target: itemRef,
   });
-  const y = useParallax(scrollYProgress, size.width < 600 ? 200 : 400);
+  const y = useParallax(scrollYProgress, size.width < 600 ? 100 : 300);
   const opacity = useParallaxOpacity(scrollYProgress, 1);
 
   return (

@@ -18,7 +18,7 @@ import Image from 'next/image';
 import useWindowSize from '../useWindowSize';
 
 const Team = ({ data }) => {
-  const { width } = useWindowSize(0);
+  const size = useWindowSize(0);
   return (
     <>
       <Box width={'100%'} display={'flex'} justifyContent={'center'}>
@@ -31,19 +31,20 @@ const Team = ({ data }) => {
           autoplay={{
             delay: 2000,
             disableOnInteraction: true,
+            
           }}
           coverflowEffect={{
             rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2.5,
+            stretch: 80,
+            depth: 200,
+            modifier: 1,
             slideShadows: false,
           }}
           modules={[EffectCoverflow, Autoplay]}
           className='swiper-container'
         >
           {data.map((item, idx) => (
-            <SwiperSlide key={idx} style={{width: width < 768 ? 140 : width > 1280 ? 500 : 320}}>
+            <SwiperSlide key={idx} style={{width:500}}>
               <Box
                 sx={{ width: '100%', height: '700px', position: 'relative' }}
               >
@@ -57,7 +58,6 @@ const Team = ({ data }) => {
                     position: 'absolute',
                     bottom: 0,
                     width: '100%',
-                    backgroundColor: 'red',
                     height: '100%',
                     display: 'block',
                   }}
