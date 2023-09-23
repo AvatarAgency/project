@@ -3,16 +3,24 @@ import { Box, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
+import useWindowSize from '../useWindowSize';
 
 const LastWorks = ({ works }) => {
   const [selected, setSelected] = useState();
+  const { width } = useWindowSize(0);
   return (
     <Grid display={'flex'} justifyContent={'center'} container spacing={0.5}>
       {works?.map((work, key) => (
         <Box
           minHeight={'80vh'}
           key={key}
-          minWidth={{xs:'20rem',sm:'30rem',lg:'20rem',md:'15rem'}}
+          minWidth={{ xs: '20rem', sm: '30rem', lg: '15rem', md: '11rem' }}
           position={'relative'}
           display={'flex'}
           className='zort'
@@ -37,7 +45,7 @@ const LastWorks = ({ works }) => {
             sx={{
               position: 'absolute',
               bottom: '0rem',
-              height: selected == key ? '100vh' : '10vh',
+              height: '100vh',
               width: '100%',
               backgroundColor: selected == key ? '#000000bf' : '',
               justifyContent: 'center',
@@ -49,8 +57,8 @@ const LastWorks = ({ works }) => {
                 className='fade-in-text'
                 sx={{
                   fontWeight: '900',
-                   ml: '1.5rem',
-                  fontSize: '2em',
+                  ml: '1.5rem',
+                  fontSize: { xs: '1.5em', md: '1.3em',lg:'2em' },
                   color: 'white',
                   position: 'absolute',
                   left: '50%',
@@ -58,11 +66,27 @@ const LastWorks = ({ works }) => {
                   transform: 'translate(-50%,-50%)',
                 }}
               >
-                {work.fields.projeContent.slice(0,240)}...
+                {work.fields.projeContent.slice(0, 140)}...
               </Box>
             )}
-            <Box className='sirket' sx={{ transform: {xs:'none',md:'rotate(-90deg)'}, ml:{xs:'1rem', sm:'0'}, bottom:{xs:10,md:100}}} >
-              {work.fields.sirketAd}
+            <Box
+              className='sirket'
+              sx={{ ml: { xs: '1rem', sm: '20' }, bottom: { xs: 10, md: 90,lg:100} , fontSize:{xs:'1.6em',md:'1.6em',lg:'2em'}}}
+            >
+              {width > 500 ? (
+                <>
+                  <motion.div
+                    animate={{
+                      transform:
+                        selected == key ? 'rotate(0deg)' : 'rotate(-90deg)',
+                    }}
+                  >
+                    {work.fields.sirketAd}
+                  </motion.div>
+                </>
+              ) : (
+                <> {work.fields.sirketAd}</>
+              )}
             </Box>
           </Box>
           </Link>

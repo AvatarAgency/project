@@ -26,7 +26,7 @@ const DeneHero = (prop) => {
   });
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], ['170vh', '-70vh']);
+  const scale = useTransform(scrollYProgress, [0, 1], ['200vh', '-70vh']);
   const width = useTransform(
     scrollYProgress,
     [0, 1],

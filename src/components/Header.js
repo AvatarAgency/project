@@ -20,7 +20,6 @@ import { usePathname} from 'next/navigation'
 import LandingLogo from '../icons/avatarlogo.png'
 
 const drawerWidth = 240;
-//const navItems = ['Anasayfa', 'İşlerimiz', 'En Son', 'Bize Ulaşın'];
 const navItems = [
   {
     name: 'Anasayfa',

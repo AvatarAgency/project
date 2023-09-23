@@ -83,23 +83,22 @@ button{
 .sirket{
   color: white;
   position: absolute;
-   font-size: 2em;
   font-weight: 900;
 }
 
-@media only  screen and (min-width: 1600px) {
-  .zort:hover{
-    flex-basis: 120em;
-  }
-}
-@media  only screen and (min-width: 1100px) {
+@media    screen and (min-width: 1400px)  {
   .zort:hover{
     flex-basis: 40em;
   }
 }
-@media  only screen and (max-width: 1024px) {
+@media    screen and (min-width: 900px)and (max-width: 1200px) {
   .zort:hover{
-    flex-basis: 33em;
+    flex-basis: 22em;
+  }
+}
+@media    screen and (max-width: 500px) {
+  .zort:hover{
+    flex-basis: 23em;
   }
 }
 
