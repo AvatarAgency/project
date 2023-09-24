@@ -9,8 +9,6 @@ import 'swiper/css/navigation';
 
 import {
   EffectCoverflow,
-  Pagination,
-  Navigation,
   Autoplay,
 } from 'swiper/modules';
 import { Box } from '@mui/material';
@@ -18,10 +16,9 @@ import Image from 'next/image';
 import useWindowSize from '../useWindowSize';
 
 const Team = ({ data }) => {
-  const size = useWindowSize(0);
   return (
     <>
-      <Box width={'100%'} display={'flex'} justifyContent={'center'}>
+      <Box width={'100%'} display={'flex'} height={'100%'} justifyContent={'center'}>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}

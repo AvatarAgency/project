@@ -61,7 +61,7 @@ const Header = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant='h6' sx={{ mt: 2, color: 'white' }}>
-        <Image width={150} src={Loogo} alt='logo' />
+        <Image width={150} src={Loogo} alt='Avatar Digital agency' />
       </Typography>
       <Divider />
       <List>
@@ -90,7 +90,7 @@ const Header = (props) => {
           <Link href={'/'}>
             <Typography  component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
               {
-                pathname === '/' ?<Image width={175} src={LandingLogo} alt='logo' /> : <Image src={Loogo} alt='logo' />
+                pathname === '/' ?<Image width={175} src={LandingLogo} alt='Digital Agency Istanbul' /> : <Image src={Loogo} alt='Digital Agency Istanbul' />
               }
               {/*<Image src={ pathname === '/' ? LandingLogo : Loogo} alt='logo' />*/}
             </Typography>

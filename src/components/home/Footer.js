@@ -147,7 +147,7 @@ const Footer = () => {
             </Grid>
             <Grid item md={12} xs={12}>
               <Box width={'100%'} mt={5} textAlign={'center'}>
-                <Image src={Logo} alt='logo' />
+                <Image src={Logo} alt='Digital Agency Istanbul Avatar' />
               </Box>
             </Grid>
           </Grid>

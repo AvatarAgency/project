@@ -53,30 +53,37 @@ const Fusion = () => {
     {
       image: Glasses,
       content: 'Yazılım',
+      alt: 'Yazılım Websitesi yapımı ',
     },
     {
       image: Pen,
       content: 'Tasarım',
+      alt: 'Web Tasarım Dijital Tasarım Digital Marketing ',
     },
     {
       image: Plane,
       content: 'Pazarlama',
+      alt: 'Yazılım Websitesi yapımı ',
     },
     {
       image: Macbook,
       content: 'İÇ İLETİŞİM',
+      alt: 'Yazılım Websitesi yapımı ',
     },
     {
       image: Earphone,
       content: 'Sosyal Medya',
+      alt: 'Sosyal medya yönetimi Social Media ',
     },
     {
       image: Coffe,
       content: 'Reklam',
+      alt: 'Reklam Pazarlama ',
     },
     {
       image: Watch,
       content: 'PRODÜKSİYON',
+      alt: 'Reklam senaryosu ',
     },
   ];
   useEffect(() => {
@@ -116,7 +123,11 @@ const Fusion = () => {
             alignItems={'center'}
           >
             <Box>
-              <Image src={item.image} height={250} />
+              <Image
+                src={item.image}
+                height={250}
+                alt={item.alt}
+              />
             </Box>
             <Box></Box>
             <Box

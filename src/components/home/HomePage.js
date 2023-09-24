@@ -8,13 +8,11 @@ import Banner from './Banner';
 import Fusion from './Fusion';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
-import useWindowSize from '../useWindowSize';
 import Team from './Team';
 
 const HomePage = ({ data, works }) => {
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], [0, -3400]);
-  const size = useWindowSize(0);
 
   return (
     <div style={{ backgroundColor: '#383737' }}>

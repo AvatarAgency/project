@@ -13,8 +13,6 @@ import 'swiper/css/navigation';
 
 import {
   EffectCoverflow,
-  Pagination,
-  Navigation,
   Autoplay,
 } from 'swiper/modules';
 
