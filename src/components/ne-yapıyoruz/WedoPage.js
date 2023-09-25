@@ -1,6 +1,6 @@
 'use client';
-import { Box, Tab, Tabs, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Box } from '@mui/material';
+import React, { useRef,  } from 'react';
 import PropTypes from 'prop-types';
 import WedoAccordion from './WedoAccordion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,10 +11,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import {
-  EffectCoverflow,
-  Autoplay,
-} from 'swiper/modules';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,149 +48,9 @@ CustomTabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    'id': `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
 const WedoPage = ({ data }) => {
   const [value, setValue] = React.useState(0);
-
-  console.log(data[0].fields);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const titles = [
-    {
-      title: 'Yazılım',
-      data: [
-        {
-          accordTitle: 'Lorem ipsum dolor sit amet',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-      ],
-    },
-    {
-      title: 'Tasarım',
-      data: [
-        {
-          accordTitle: '  amet',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-      ],
-    },
-    {
-      title: 'Strateji',
-      data: [
-        {
-          accordTitle: 'Lorem ipsum dolor sit amet',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-      ],
-    },
-    {
-      title: 'Pazarlama',
-      data: [
-        {
-          accordTitle: 'Lorem ipsum dolor sit amet',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-      ],
-    },
-    {
-      title: 'Reklam',
-      data: [
-        {
-          accordTitle: 'Lorem ipsum dolor sit amet',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-        {
-          accordTitle: 'Collapsible Group Item #1',
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-        },
-      ],
-    },
-  ];
+  const swiperRef = useRef(null);
 
   return (
     <div style={{ width: '100%' }}>
@@ -243,25 +100,10 @@ const WedoPage = ({ data }) => {
         mt={10}
         flexDirection={'column'}
       >
-        {/*<Box display={'flex'} justifyContent={'center'}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant='scrollable'
-            scrollButtons
-            allowScrollButtonsMobile
-            aria-label='basic tabs example'
-          >
-            <Tab label='YAZILIM' {...a11yProps(0)} />
-            <Tab label='TASARIM' {...a11yProps(1)} />
-            <Tab label='STRATEJİ' {...a11yProps(2)} />
-            <Tab label='PAZARLAMA' {...a11yProps(3)} />
-            <Tab label='REKLAM' {...a11yProps(4)} />
-          </Tabs>
-        </Box>*/}
         <Box display={'flex'} justifyContent={'center'} width={'100%'} mb={4}>
           <div className='container'>
             <Swiper
+              ref={swiperRef}
               effect={'coverflow'}
               grabCursor={true}
               centeredSlides={true}
@@ -285,10 +127,15 @@ const WedoPage = ({ data }) => {
                 <SwiperSlide key={idx}>
                   <Box
                     sx={{
-                      fontSize: { lg: '3.5em', md: '4em', xs: '2em',xl:'4.6em' },
+                      fontSize: {
+                        lg: '3.5em',
+                        md: '4em',
+                        xs: '2em',
+                        xl: '4.6em',
+                      },
                       color: idx == value ? 'white' : ' gray',
-                      textTransform:'uppercase',
-                      fontWeight:900
+                      textTransform: 'uppercase',
+                      fontWeight: 900,
                     }}
                   >
                     {item.fields.title}
@@ -298,8 +145,18 @@ const WedoPage = ({ data }) => {
             </Swiper>
           </div>
         </Box>
-        <Box display={'flex'} justifyContent={'center'} minHeight={'22rem'} width={'100%'} mb={10}>
-          <Box display={'flex'} width={{xs:'100%',md:'80%',lg:'70%', xl:'50%'}}>
+        <Box
+          display={'flex'}
+          justifyContent={'center'}
+          minHeight={'22rem'}
+          width={'100%'}
+          mb={10}
+        >
+          <Box
+            onClick={() => swiperRef.current.swiper.autoplay.stop()}
+            display={'flex'}
+            width={{ xs: '100%', md: '80%', lg: '70%', xl: '50%' }}
+          >
             {data.map((item, idx) => (
               <CustomTabPanel key={idx} value={value} index={idx}>
                 <WedoAccordion data={item.fields.accordions} />
@@ -314,7 +171,7 @@ const WedoPage = ({ data }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            fontWeight:900,
+            fontWeight: 900,
             fontSize: {
               lg: '6em',
               md: '5em',

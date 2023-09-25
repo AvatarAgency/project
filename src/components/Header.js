@@ -35,7 +35,7 @@ const navItems = [
   },
   {
     name: 'Kime Yapıyoruz?',
-    link: '/works',
+    link: '/kime-yapiyoruz',
   },
   {
     name: 'Bize Ulaşın',

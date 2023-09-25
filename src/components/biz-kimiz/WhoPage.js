@@ -21,7 +21,7 @@ const WhoPage = ({data}) => {
       </Box>
       <Box minHeight={'20rem'} sx={{ backgroundColor: 'white', width: '100%', color: 'black', alignItems: 'center' }}>
         <Grid container alignItems={'center'} minHeight={'20rem'}>
-          <Grid sx={{ fontSize: {lg:'4em',md:'4em'}, pl: { xs: 0, sm: 10 }, textAlign: { xs: 'center', sm: 'unset' } , letterSpacing:'2px'}} item lg={5.5} md='6.9'>
+          <Grid sx={{ fontSize: {lg:'4em',md:'4em',xs:'2.5em'}, pl: { xs: 0, sm: 10 }, textAlign: { xs: 'center', sm: 'unset' } , letterSpacing:'2px', fontWeight:600}} item lg={5.5} md='6.9' xs={12}>
             MARKANIZIN AVATARI <br></br> <span style={{ color: '#34B197' }}>BİZ OLALIM</span>
           </Grid>
           <Grid item xs={12} md={2} sx={{ fontSize: '1.1em', fontWeight: 500, textAlign: { xs: 'center', sm: 'unset' } }}>
