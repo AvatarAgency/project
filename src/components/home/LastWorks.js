@@ -4,10 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
+  motion
 } from 'framer-motion';
 import useWindowSize from '../useWindowSize';
 
@@ -27,8 +24,8 @@ const LastWorks = ({ works }) => {
           onMouseOver={() => setSelected(key)}
           onMouseOut={() => setSelected()}
         >
-          <Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>
-          {/*<Box width={'100%'} height={'100%'}>
+          <Link style={{ textDecoration: 'none', color: 'white' }} href={'/kime-yapiyoruz/' + work.fields.slug}>
+          <Box width={'100%'} height={'100%'}>
             <Image
               src={'https:' + work.fields.projeResimler[0].fields.file.url}
               width={0}
@@ -39,7 +36,7 @@ const LastWorks = ({ works }) => {
               sizes='100vw'
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-          </Box>*/}
+          </Box>
           <Box
             className={selected == key ? '' : 'grad'}
             sx={{

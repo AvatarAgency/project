@@ -1,0 +1,28 @@
+<svg id="Group_35" data-name="Group 35" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="65" viewBox="0 0 363.909 100.009">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_20" data-name="Path 20" d="M0,51.841A46.332,46.332,0,1,0,46.332,5.509,46.333,46.333,0,0,0,0,51.841" transform="translate(0 -5.509)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="363.909" height="100.009" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_32" data-name="Group 32" transform="translate(0 3.673)">
+    <g id="Group_31" data-name="Group 31" clip-path="url(#clip-path)">
+      <path id="Path_11" data-name="Path 11" d="M87.363,63.707l29.079-16.789V41.107L77.3,63.707l39.146,22.6V80.5Z" transform="translate(-25.767 -17.376)" fill="#fff"/>
+      <path id="Path_12" data-name="Path 12" d="M79.211,36.484V2.906L74.178,0V45.2l39.146-22.6-5.033-2.906Z" transform="translate(-24.728 -3.673)" fill="#fff"/>
+      <path id="Path_13" data-name="Path 13" d="M79.211,90.931v33.578l-5.033,2.906v-45.2l39.146,22.6-5.033,2.906Z" transform="translate(-24.728 -31.078)" fill="#fff"/>
+      <path id="Path_14" data-name="Path 14" d="M32.062,63.707,2.983,46.919V41.107l39.146,22.6L2.983,86.308V80.5Z" transform="translate(-0.994 -17.376)" fill="#fff"/>
+      <path id="Path_15" data-name="Path 15" d="M40.214,36.484V2.906L45.247,0V45.2L6.1,22.6l5.033-2.906Z" transform="translate(-2.034 -3.673)" fill="#fff"/>
+      <path id="Path_16" data-name="Path 16" d="M37.594,8.475v17.9l-15.5-8.949" transform="translate(-7.365 -6.498)" fill="#fff"/>
+      <path id="Path_17" data-name="Path 17" d="M115.75,70.672l15.5-8.948v17.9" transform="translate(-38.586 -24.248)" fill="#fff"/>
+      <path id="Path_18" data-name="Path 18" d="M22.518,124.068l15.5-8.948v17.9" transform="translate(-7.507 -42.048)" fill="#fff"/>
+      <path id="Path_19" data-name="Path 19" d="M40.214,90.931v33.578l5.033,2.906v-45.2L6.1,104.814l5.033,2.906Z" transform="translate(-2.034 -31.078)" fill="#fff"/>
+    </g>
+  </g>
+  <g id="Group_34" data-name="Group 34">
+    <g id="Group_33" data-name="Group 33" clip-path="url(#clip-path-2)">
+      <text id="avatar" transform="translate(106.397 68.089)" fill="#fff" font-size="74" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">a</tspan><tspan y="0" letter-spacing="-0.019em">v</tspan><tspan y="0">a</tspan><tspan y="0" letter-spacing="-0.005em">t</tspan><tspan y="0">ar</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -126,6 +126,7 @@ const Fusion = () => {
               <Image
                 src={item.image}
                 height={250}
+                width={0}
                 alt={item.alt}
               />
             </Box>

@@ -7,18 +7,21 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import {
-  EffectCoverflow,
-  Autoplay,
-} from 'swiper/modules';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import useWindowSize from '../useWindowSize';
 
 const Team = ({ data }) => {
+  console.log(data);
   return (
     <>
-      <Box width={'100%'} display={'flex'} height={'100%'} justifyContent={'center'}>
+      <Box
+        width={'100%'}
+        display={'flex'}
+        height={'100%'}
+        justifyContent={'center'}
+      >
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -46,6 +49,10 @@ const Team = ({ data }) => {
               >
                 <Image
                   fill
+                  width={0}
+                  height={0}
+                  alt={`Avatar Digital Media Agency Dijital Medya Ajansı ${item.title}`}
+                  sizes='100vw'
                   style={{ objectFit: 'cover' }}
                   src={'https:' + item.fields.file.url}
                 />

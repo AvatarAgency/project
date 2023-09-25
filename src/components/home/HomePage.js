@@ -7,7 +7,6 @@ import LastWorks from './LastWorks';
 import Banner from './Banner';
 import Fusion from './Fusion';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import Image from 'next/image';
 import Team from './Team';
 
 const HomePage = ({ data, works }) => {
@@ -25,7 +24,7 @@ const HomePage = ({ data, works }) => {
         </motion.h6>
       </Box>
       <LastWorks works={works} />
-      <Banner data={data[0]?.fields?.sonIsler} />
+      <Banner/>
       <Box display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
           Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz - Hizmetlerimiz -

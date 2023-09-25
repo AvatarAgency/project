@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-const Banner = ({ data }) => {
+const Banner = () => {
   return (
     <Box
       display={'flex'}
@@ -9,6 +9,7 @@ const Banner = ({ data }) => {
       minHeight={{ xs: '35rem', sm: '40rem', md: '45rem', lg: '50rem' }}
       justifyContent={'center'}
       alignItems={'center'}
+      py={10}
       sx={{
         backgroundColor: '#383737',
         color: 'white',

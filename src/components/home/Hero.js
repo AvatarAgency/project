@@ -2,10 +2,7 @@
 import { Grid, Button, Box, Divider } from '@mui/material';
 import React, { useRef } from 'react';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import Microsoft from '../../icons/Microsoft.svg';
-import Adobe from '../../icons/Adobe.svg';
-import Google from '../../icons/Google-Maps.svg';
-import Oracle from '../../icons/Oracle.svg';
+ 
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -16,7 +13,6 @@ const Hero = ({ data }) => {
     offset: ['start end', 'end start'],
   });
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5], [0, 0, 2]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
     <Box
@@ -72,7 +68,11 @@ const Hero = ({ data }) => {
                 </Button>
               </Grid>
               <Grid fontSize={'1.2em'} fontWeight={700} item md={6} xs={12}>
-                <Box width={{ xs: '100%', sm: '50%' }}> {data}</Box>
+                <Box width={{ xs: '100%', sm: '50%',lg:'40%' }}>
+                  {' '}
+                  Markanızın özgünlüğünü ön plana çıkaracak, hedef kitlenize
+                  akılda kalıcı bir deneyim sunacak Avatar’ınız biz olalım!
+                </Box>
               </Grid>
             </Grid>
             <Grid
@@ -91,7 +91,7 @@ const Hero = ({ data }) => {
                 xs={12}
                 sx={{ textAlign: 'center' }}
               >
-                <Image src={Microsoft} alt='microsoft' />
+                <Image width={250} height={150} src={'/Microsoft.svg'} alt='microsoft' />
               </Grid>
               <Grid
                 item
@@ -101,7 +101,7 @@ const Hero = ({ data }) => {
                 xs={12}
                 sx={{ textAlign: 'center' }}
               >
-                <Image src={Adobe} alt='adobe' />
+                <Image width={250} height={150} src={'/Adobe.svg'} alt='adobe' />
               </Grid>
               <Grid
                 item
@@ -111,7 +111,7 @@ const Hero = ({ data }) => {
                 xs={12}
                 sx={{ textAlign: 'center' }}
               >
-                <Image src={Google} alt='google' />
+                <Image width={250} height={150} src={'/Google-Maps.svg'} alt='google' />
               </Grid>
               <Grid
                 item
@@ -121,7 +121,7 @@ const Hero = ({ data }) => {
                 xs={12}
                 sx={{ textAlign: 'center' }}
               >
-                <Image src={Oracle} alt='oracle' />
+                <Image width={250} height={150} src={'/Oracle.svg'} alt='oracle' />
               </Grid>
             </Grid>
           </motion.section>
