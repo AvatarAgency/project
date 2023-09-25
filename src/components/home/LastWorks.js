@@ -28,7 +28,7 @@ const LastWorks = ({ works }) => {
           onMouseOut={() => setSelected()}
         >
           <Link style={{ textDecoration: 'none', color: 'white' }} href={'/works/' + work.fields.slug}>
-          <Box width={'100%'} height={'100%'}>
+          {/*<Box width={'100%'} height={'100%'}>
             <Image
               src={'https:' + work.fields.projeResimler[0].fields.file.url}
               width={0}
@@ -39,7 +39,7 @@ const LastWorks = ({ works }) => {
               sizes='100vw'
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
-          </Box>
+          </Box>*/}
           <Box
             className={selected == key ? '' : 'grad'}
             sx={{
