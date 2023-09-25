@@ -18,8 +18,12 @@ import { useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname} from 'next/navigation'
 import LandingLogo from '../icons/avatarlogo.png'
+import dynamic from 'next/dynamic';
 
-const drawerWidth = 240;
+
+const MobileHeader = dynamic(() => import('./MobileHeader'), {
+  ssr: false,
+})
 const navItems = [
   {
     name: 'Anasayfa',
@@ -44,7 +48,6 @@ const navItems = [
 ];
 
 const Header = (props) => {
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [deger, setDeger] = React.useState(0);
   const pathname = usePathname();
@@ -57,28 +60,6 @@ const Header = (props) => {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ mt: 2, color: 'white' }}>
-        <Image width={150} src={Loogo} alt='Avatar Digital agency' />
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding>
-            <Link style={{ textDecoration: 'none', color: 'white' }} href={item.link}>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item.name} />
-              </ListItemButton>
-            </Link>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex', position: 'absolute' }}>
@@ -107,21 +88,7 @@ const Header = (props) => {
         </Toolbar>
       </AppBar>
       <Box component='nav'>
-        <Drawer
-          container={container}
-          variant='temporary'
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            'display': { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'transparent' },
-          }}
-        >
-          {drawer}
-        </Drawer>
+         <MobileHeader handleDrawerToggle={handleDrawerToggle} mobileOpen={mobileOpen} Loogo={Loogo}/>
       </Box>
     </Box>
   );
