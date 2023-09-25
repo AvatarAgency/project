@@ -1,8 +1,7 @@
 'use client';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import React from 'react';
 import './style.css';
-import LastWorks from '../home/LastWorks';
 import Team from '../home/Team';
 
 const WhoPage = ({data}) => {

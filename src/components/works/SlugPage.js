@@ -2,7 +2,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import LastWorks from '../home/LastWorks';
-import Image from 'next/image';
 import WorksSlider from './WorksSlider';
 
 const SlugPage = ({ post, others }) => {

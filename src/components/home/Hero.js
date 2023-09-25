@@ -6,7 +6,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const Hero = ({ data }) => {
+const Hero = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,

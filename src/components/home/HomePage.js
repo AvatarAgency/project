@@ -16,7 +16,7 @@ const HomePage = ({ data, works }) => {
   return (
     <div style={{ backgroundColor: '#383737' }}>
       <DeneHero />
-      <Hero data={data[0].fields.biziIzle} />
+      <Hero/>
       <Box display={'flex'} flexWrap={'nowrap'} width={'100%'} height={'6rem'} className='sectionTitle' alignItems={'center'} overflow={'hidden'} flexDirection={'row'}>
         <motion.h6 style={{ x }} className='title'>
           Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler - Son İşler -
