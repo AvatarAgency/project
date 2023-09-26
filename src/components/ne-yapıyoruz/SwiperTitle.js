@@ -3,10 +3,10 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import './style.css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import styles from './style.module.css';
 
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { useRef } from 'react';
@@ -15,7 +15,7 @@ import { Box } from '@mui/material';
 const SwiperTitle = ({ data , setValue, value, swiperRef}) => {
 
   return (
-    <div className='container'>
+    <div className={styles.container}>
       <Swiper
         ref={swiperRef}
         effect={'coverflow'}
@@ -33,12 +33,13 @@ const SwiperTitle = ({ data , setValue, value, swiperRef}) => {
           stretch: 0,
           depth: 100,
           modifier: 2.5,
+          slideShadows:false
         }}
         modules={[EffectCoverflow, Autoplay]}
-        className='swiper_container'
+        className={styles.swiperContainer}
       >
         {data.map((item, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide className={styles.swiperSlide} key={idx}>
             <Box
               sx={{
                 fontSize: {

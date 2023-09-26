@@ -16,6 +16,7 @@ const barlow = Barlow_Condensed({
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+      
       <body className={barlow.className}>
         <CssBaseline />
         <Header />
