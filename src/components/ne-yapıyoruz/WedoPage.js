@@ -44,9 +44,6 @@ CustomTabPanel.propTypes = {
 const WedoPage = ({ data }) => {
   const [value, setValue] = React.useState(0);
   const swiperRef = useRef(null);
-  const router = useRouter();
-
-  scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div style={{ width: '100%' }}>
