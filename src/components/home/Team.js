@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,10 +11,8 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import useWindowSize from '../useWindowSize';
 
 const Team = ({ data }) => {
-  console.log(data);
   return (
     <>
       <Box
