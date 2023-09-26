@@ -3,16 +3,22 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
-import './style.css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import './style.css';
 
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { Box } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Team = ({ data }) => {
+  const router = useRouter()
+
+  React.useEffect(() => {
+     router.refresh()
+  }, [])
   return (
     <>
       <Box

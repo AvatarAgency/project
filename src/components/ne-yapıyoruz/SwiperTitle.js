@@ -1,21 +1,27 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import styles from './style.module.css';
+import './style.css';
 
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { useRef } from 'react';
 import { Box } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
-const SwiperTitle = ({ data , setValue, value, swiperRef}) => {
+const SwiperTitle = ({ data, setValue, value, swiperRef, window }) => {
+  const router = useRouter()
 
+  useEffect(() => {
+     router.refresh()
+  }, [])
+  
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Swiper
         ref={swiperRef}
         effect={'coverflow'}
@@ -33,13 +39,12 @@ const SwiperTitle = ({ data , setValue, value, swiperRef}) => {
           stretch: 0,
           depth: 100,
           modifier: 2.5,
-          slideShadows:false
         }}
         modules={[EffectCoverflow, Autoplay]}
-        className={styles.swiperContainer}
+        className='swiper_container'
       >
         {data.map((item, idx) => (
-          <SwiperSlide className={styles.swiperSlide} key={idx}>
+          <SwiperSlide key={idx}>
             <Box
               sx={{
                 fontSize: {
