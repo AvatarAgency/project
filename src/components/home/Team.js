@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,11 +14,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const Team = ({ data }) => {
-  const router = useRouter()
+  const router = useRouter();
 
   React.useEffect(() => {
-     router.refresh()
-  }, [])
+    router.refresh();
+  }, []);
   return (
     <>
       <Box
