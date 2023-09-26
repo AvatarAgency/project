@@ -20,6 +20,7 @@ const WorksSlider = ({ data }) => {
         delay: 2000,
         disableOnInteraction: true,
       }}
+      slidesPerView={'auto'}
       navigation={true}
       modules={[Pagination, Navigation]}
       className={styles.swiper}

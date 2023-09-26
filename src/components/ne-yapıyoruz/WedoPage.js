@@ -78,7 +78,7 @@ const WedoPage = ({ data }) => {
             sx={{
               fontSize: {
                 xl: '16em',
-                xs: '5em',
+                xs: '4.5em',
                 sm: '10.5em',
                 md: '9.7em',
                 lg: '12em',
@@ -176,12 +176,13 @@ const WedoPage = ({ data }) => {
               lg: '6em',
               md: '5em',
               sm: '3.5em',
-              xs: '3.5em',
+              xs: '2.2em',
               xl: '7em',
             },
           }}
           color={'white'}
           width={'100%'}
+          py={5}
         >
           <Box width={'70%'} textAlign={'center'}>
             STRATEJİK İLETİŞİM YAKLAŞIMI ALTINDA AYNI ANDA BİR KREATİF AJANS,

@@ -4,7 +4,7 @@ import { Box, Divider, Grid } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const WorksPage = ({ works }) => {
+const   WorksPage = ({ works }) => {
   return (
     <>
       <Grid container mb={5}  justifyContent={'center'}   display={'flex'} textAlign={'center'} width={'100%'} color={'white'}>
@@ -29,7 +29,7 @@ const WorksPage = ({ works }) => {
       <Grid container spacing={5} px={10} mt={2} mb={10}>
         {works.map((work, key) => (
           <Grid key={key} mb={{xs:5,md:0}} item md={6} xs={12}>
-            <Link href={'/works/' + work.fields.slug} style={{ textDecoration: 'none' }}>
+            <Link href={'/kime-yapiyoruz/' + work.fields.slug} style={{ textDecoration: 'none' }}>
               <Box width={'100%'} height={'90%'}>
                 <Image
                   src={'https:' + work.fields.projeResimler[0].fields.file.url}
