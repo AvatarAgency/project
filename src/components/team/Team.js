@@ -6,19 +6,13 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './style.css';
+import styles from './style.module.css';
 
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const Team = ({ data }) => {
-  const router = useRouter();
-
-  React.useEffect(() => {
-    router.refresh();
-  }, []);
   return (
     <>
       <Box
@@ -45,10 +39,10 @@ const Team = ({ data }) => {
             slideShadows: false,
           }}
           modules={[EffectCoverflow, Autoplay]}
-          className='swiper-container'
+          className={styles.cardSwiperContainer}
         >
           {data.map((item, idx) => (
-            <SwiperSlide key={idx} className='swiper_slider'>
+            <SwiperSlide key={idx} className={styles.cardSwiperSlider}>
               <Box
                 sx={{ width: '100%', height: '700px', position: 'relative' }}
               >
@@ -69,7 +63,7 @@ const Team = ({ data }) => {
                     height: '100%',
                     display: 'block',
                   }}
-                  className='gradient-team'
+                  className={styles.cardGradient}
                 ></Box>
                 <Box
                   position={'absolute'}

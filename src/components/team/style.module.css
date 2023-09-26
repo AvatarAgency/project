@@ -1,25 +1,21 @@
-.swiper-container {
-  width: 100%;
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-}
-.gradient-team{
+ 
+.cardGradient{
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,1,1,0) 100%);
 }
 
 @media screen and (max-width: 600px) {
-  .swiper_slider{
+  .cardSwiperSlider{
     width: 200px;
   }
 }
 @media screen and (min-width: 900px) {
-  .swiper_slider{
+  .cardSwiperSlider{
     width: 400px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .swiper_slider{
+  .cardSwiperSlider{
     width: 500px;
   }
 }

@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import WedoAccordion from './WedoAccordion';
 import SwiperTitle from './SwiperTitle';
+import { useRouter } from 'next/navigation';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,6 +44,9 @@ CustomTabPanel.propTypes = {
 const WedoPage = ({ data }) => {
   const [value, setValue] = React.useState(0);
   const swiperRef = useRef(null);
+  const router = useRouter();
+
+  scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div style={{ width: '100%' }}>
@@ -93,7 +97,12 @@ const WedoPage = ({ data }) => {
         flexDirection={'column'}
       >
         <Box display={'flex'} justifyContent={'center'} width={'100%'} mb={4}>
-          <SwiperTitle data={data} setValue={setValue} value={value} swiperRef={swiperRef} />
+          <SwiperTitle
+            data={data}
+            setValue={setValue}
+            value={value}
+            swiperRef={swiperRef}
+          />
         </Box>
         <Box
           display={'flex'}
