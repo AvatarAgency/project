@@ -26,7 +26,7 @@ const DeneHero = (prop) => {
   });
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [ '190','-70vh']);
+  const y = useTransform(scrollYProgress, [0, 0.8, 1], [ '-51vh','40vh','50vh']);
  
 
   const container = {
@@ -65,10 +65,11 @@ const DeneHero = (prop) => {
           ref={targetRef}
           style={{
             width: '100%',
-            height: size.width < 768 ? '40rem' : scale,
+            height: size.width < 768 ? '40rem' : '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            y
           }}
         >
           <motion.div
