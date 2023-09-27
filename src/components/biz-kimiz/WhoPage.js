@@ -3,8 +3,16 @@ import { Box, Grid } from '@mui/material';
 import React from 'react';
 import './style.css';
 import Team from '../team/Team';
- 
+import { useEffect } from 'react';
+
 const WhoPage = ({ data }) => {
+  useEffect(() => {
+    const alreadyLoaded = localStorage.getItem('alreadyLoaded');
+    if (!alreadyLoaded) {
+      localStorage.setItem('alreadyLoaded', true);
+      window.location.reload();
+    }
+  }, []);
   return (
     <div style={{ width: '100%' }}>
       <Box width={'100%'} pt={10} px={8}>

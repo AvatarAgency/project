@@ -11,8 +11,10 @@ import styles from './style.module.css';
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import { Box } from '@mui/material';
 import Image from 'next/image';
+import useWindowSize from '../useWindowSize';
 
 const Team = ({ data }) => {
+  const { width } = useWindowSize(0);
   return (
     <>
       <Box
@@ -25,7 +27,7 @@ const Team = ({ data }) => {
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={'auto'}
+          slidesPerView={width < 500 ? 2 : data.length}
           slideToClickedSlide={true}
           autoplay={{
             delay: 2000,
@@ -39,7 +41,7 @@ const Team = ({ data }) => {
             slideShadows: false,
           }}
           modules={[EffectCoverflow, Autoplay]}
-          className={styles.cardSwiperContainer}
+          style={{ width: 1700 }}
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx} className={styles.cardSwiperSlider}>

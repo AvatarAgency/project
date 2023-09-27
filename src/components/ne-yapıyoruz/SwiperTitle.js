@@ -25,7 +25,7 @@ const SwiperTitle = ({ data, setValue, value, swiperRef, window }) => {
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={2.3}
         slideToClickedSlide={true}
         autoplay={{
           delay: 2000,
