@@ -15,7 +15,7 @@ const HomePage = ({ data, works }) => {
 
   return (
     <div style={{ backgroundColor: '#383737' }}>
-      {/*<DeneHero />*/}
+      <DeneHero />
       <Hero />
       <Box
         display={'flex'}

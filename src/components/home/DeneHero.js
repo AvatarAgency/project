@@ -26,7 +26,7 @@ const DeneHero = (prop) => {
   });
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [ size.width >1280 ? '190vh': size.width > 900 ? '200vh': '', '-70vh']);
+  const scale = useTransform(scrollYProgress, [0, 1], [ '190','-70vh']);
  
 
   const container = {
@@ -37,15 +37,6 @@ const DeneHero = (prop) => {
     }),
   };
  
-  //const letters = Array.from('MARKANIZIN AVATARI BİZ OLALIM');
-
-  //useEffect(() => {
-  //  const getFont = () => {
-  //    size.width >= 992 ? '15rem' : size.width >= 768 ? '7rem' : size.width >= 600 ? '7rem' : size.width < 600 ? '7rem' : '7rem';
-  //  };
-
-  //  getFont();
-  //}, [size.width]);
 
   return (
     <Box sx={{ width: '100%', height: '100%' }} position={'relative'}>
