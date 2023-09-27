@@ -22,11 +22,11 @@ const DeneHero = (prop) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start end', 'end start'],
+    offset: ['start center', 'end start'],
   });
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.8, 1], [ '-51vh','40vh','50vh']);
+  const y = useTransform(scrollYProgress, [0, 0.7,1], [ '-27vh','30rem','35rem']);
  
 
   const container = {
@@ -65,15 +65,15 @@ const DeneHero = (prop) => {
           ref={targetRef}
           style={{
             width: '100%',
-            height: size.width < 768 ? '40rem' : '100vh',
+            minHeight: size.width < 768 ? '40rem' : '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            y
+ 
           }}
         >
           <motion.div
-            style={{ zIndex: 15, width: '100%', textAlign: 'center' }}
+            style={{ zIndex: 15, width: '100%', textAlign: 'center', y }}
           >
             <Grid item sm={12}>
               <motion.div
