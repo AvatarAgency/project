@@ -15,7 +15,7 @@ const HomePage = ({ data, works }) => {
 
   return (
     <div style={{ backgroundColor: '#383737' }}>
-      <DeneHero />
+      {/*<DeneHero />*/}
       <Hero />
       <Box
         display={'flex'}
@@ -36,7 +36,7 @@ const HomePage = ({ data, works }) => {
           İşler - Son İşler - Son İşler - Son İşler
         </motion.h6>
       </Box>
-      {/*<LastWorks works={works} />*/}
+      <LastWorks works={works} />
       <Banner />
       <Box
         display={'flex'}
