@@ -27,24 +27,7 @@ const DeneHero = (prop) => {
 
   //const opacity = useTransform(scrollYProgress, [0, 0.5, 0.75, 1], [1, 1, 0, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [ size.width >1280 ? '190vh': size.width > 900 ? '200vh': '', '-70vh']);
-  const width = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [
-      size.width < 768
-        ? '100%'
-        : size.width >= 1440
-        ? '100%'
-        : size.width >= 992
-        ? '76%'
-        : size.width >= 768
-        ? '65%'
-        : size.width >= 1280
-        ? '46%'
-        : '10%',
-      '100%',
-    ]
-  );
+ 
 
   const container = {
     hidden: { opacity: 0 },
@@ -53,29 +36,7 @@ const DeneHero = (prop) => {
       transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
     }),
   };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      x: -20,
-      y: 10,
-      transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  };
+ 
   //const letters = Array.from('MARKANIZIN AVATARI BİZ OLALIM');
 
   //useEffect(() => {
